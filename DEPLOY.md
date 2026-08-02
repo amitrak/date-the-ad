@@ -12,18 +12,35 @@ Same stack as cmogame.com — GitHub Pages, custom domain, DNS at Cloudflare.
 | `og-image.png` | 1200×630 social preview card, referenced by the meta tags. |
 | `CNAME` | Tells GitHub Pages which custom domain to serve. |
 
-`DEPLOY.md` and `.claude/` are not needed by the site and can stay out of the repo.
+`README.md` and `DEPLOY.md` ride along as documentation; GitHub Pages ignores them. `.claude/` and `.gstack/` are gitignored.
 
 ## 1. Push to GitHub
 
+The repo is already initialized, committed, and pointed at
+`https://github.com/amitrak/date-the-ad.git`. It just needs credentials — this
+machine has no SSH key, no credential helper, and no `gh`.
+
+Authenticate once with the GitHub CLI (browser flow, no token to copy around):
+
 ```bash
-cd /Users/andrew/advertisingquiz && git init -b main && git add index.html og-image.png CNAME && git commit -m "Date the Ad: a marketing history game"
+brew install gh && gh auth login
 ```
 
-Create an empty repo named `date-the-ad` on GitHub, then:
+Then push:
 
 ```bash
-git remote add origin git@github.com:amitrak/date-the-ad.git && git push -u origin main
+cd /Users/andrew/advertisingquiz && git push -u origin main
+```
+
+Prefer SSH instead? Generate a key, add the printed public key at
+https://github.com/settings/keys, then switch the remote:
+
+```bash
+ssh-keygen -t ed25519 -C "andrewmitrak@gmail.com" && cat ~/.ssh/id_ed25519.pub
+```
+
+```bash
+cd /Users/andrew/advertisingquiz && git remote set-url origin git@github.com:amitrak/date-the-ad.git && git push -u origin main
 ```
 
 ## 2. Turn on Pages
