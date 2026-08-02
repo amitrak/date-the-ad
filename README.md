@@ -1,6 +1,6 @@
 # Date the Ad
 
-**A Marketing History Game** — [date-the-ad.marketinghistory.org](https://date-the-ad.marketinghistory.org)
+**A Marketing History Game** — [adquiz.marketinghistory.org](https://adquiz.marketinghistory.org)
 
 We show you a historic advertisement. You guess the year it ran.
 

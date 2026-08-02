@@ -1,6 +1,6 @@
 # Deploying Date the Ad
 
-Target: **https://date-the-ad.marketinghistory.org**
+Target: **https://adquiz.marketinghistory.org**
 
 Same stack as cmogame.com — GitHub Pages, custom domain, DNS at Cloudflare.
 
@@ -55,7 +55,7 @@ In the `marketinghistory.org` zone:
 
 | Type | Name | Target | Proxy |
 | --- | --- | --- | --- |
-| CNAME | `date-the-ad` | `amitrak.github.io` | **DNS only (grey cloud)** |
+| CNAME | `adquiz` | `amitrak.github.io` | **DNS only (grey cloud)** |
 
 Grey cloud matters. Your cmogame.com records resolve straight to GitHub's IPs (185.199.108–111.153), so that zone is already set to DNS-only — match it. Leaving the orange cloud on blocks GitHub from issuing the TLS certificate and can cause redirect loops under Cloudflare's Flexible SSL mode.
 
@@ -66,7 +66,7 @@ This record only adds a subdomain. The apex `marketinghistory.org` keeps pointin
 Certificate issuance usually takes 10–30 minutes.
 
 ```bash
-curl -sI https://date-the-ad.marketinghistory.org/ | head -3
+curl -sI https://adquiz.marketinghistory.org/ | head -3
 ```
 
 Then check the social card renders before you announce it:
