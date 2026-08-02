@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date the Ad — A Marketing History Game</title>
+<meta name="description" content="Can you guess the year of the iconic ad? A 10-round game spanning 140 years of advertising history, from Victorian soap posters to viral Super Bowl spots.">
+<meta name="author" content="Andrew Mitrak">
+<link rel="canonical" href="https://date-the-ad.marketinghistory.org/">
+
+<!-- Social preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Date the Ad">
+<meta property="og:title" content="Date the Ad — A Marketing History Game">
+<meta property="og:description" content="Can you guess the year of the iconic ad? 10 rounds, 140 years of advertising history.">
+<meta property="og:url" content="https://date-the-ad.marketinghistory.org/">
+<meta property="og:image" content="https://date-the-ad.marketinghistory.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Date the Ad — A Marketing History Game">
+<meta name="twitter:description" content="Can you guess the year of the iconic ad? 10 rounds, 140 years of advertising history.">
+<meta name="twitter:image" content="https://date-the-ad.marketinghistory.org/og-image.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='64' font-weight='bold' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ffffff;
+    --paper-dark: #f5f5f5;
+    --ink: #111111;
+    --ink-soft: #666666;
+    --accent: #111111;
+    --accent-dark: #000000;
+    --gold: #111111;
+    --teal: #555555;
+    --card: #ffffff;
+    --line: #e5e5e5;
+    --good: #111111;
+    --ok: #555555;
+    --bad: #999999;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .06);
+    --font-display: "Spectral", Georgia, serif;
+    --font-ui: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--font-ui);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  .app {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 16px 64px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    margin: 0 -16px;
+    padding: 12px 16px 10px;
+  }
+  .header-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.05rem, 3.5vw, 1.45rem);
+    letter-spacing: .06em;
+    white-space: nowrap;
+    line-height: 1.1;
+  }
+  .brand .tagline {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
+    font-size: .62rem;
+    letter-spacing: .06em;
+    color: var(--ink-soft);
+  }
+  .hud {
+    display: flex;
+    align-items: stretch;
+  }
+  .stat {
+    padding: 2px 14px;
+    border-left: 1px solid var(--line);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .stat .label {
+    display: block;
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .stat .value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat.score .value { color: var(--accent); }
+
+  .progress-track {
+    max-width: 780px;
+    margin: 10px auto 0;
+    height: 5px;
+    background: var(--paper-dark);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--ink);
+    border-radius: 999px;
+    transition: width .5s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  /* ---------- Screens ---------- */
+  .screen { display: none; animation: fadeUp .4s ease both; }
+  .screen.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Intro ---------- */
+  .intro {
+    text-align: center;
+    padding: 48px 8px 24px;
+  }
+  .intro .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+    letter-spacing: .12em;
+    text-indent: .12em;
+    margin-bottom: 2px;
+  }
+  .intro .wordmark-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+  }
+  .intro h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .intro h1 em { color: var(--accent); font-style: italic; }
+  .intro p.sub {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    max-width: 460px;
+    margin: 0 auto 30px;
+  }
+  /* ---------- Buttons ---------- */
+  .btn {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 34px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: #333; }
+  .btn-primary:disabled {
+    background: #d4d4d4;
+    color: #fff;
+    cursor: not-allowed;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  /* ---------- Round card ---------- */
+  .round-card {
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: calc(var(--radius) + 4px);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-top: 22px;
+  }
+  .media-frame {
+    position: relative;
+    background: repeating-linear-gradient(45deg, #161616, #161616 14px, #1d1d1d 14px, #1d1d1d 28px);
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .media-frame img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+  }
+  /* Artwork with a transparent background needs light behind it, or dark
+     linework disappears into the frame. */
+  .media-frame.on-light {
+    background: #ffffff;
+    padding: 34px 24px;
+  }
+  .media-frame.on-light img { max-height: 340px; }
+  .media-frame .video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .media-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  /* Strip that covers the YouTube title bar so it can't spoil the year */
+  .spoiler-guard {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 30%;
+    min-height: 56px;
+    max-height: 96px;
+    z-index: 5;
+    background: linear-gradient(180deg, #111 0%, #111 72%, rgba(17, 17, 17, 0) 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 9px;
+    color: #ddd;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    pointer-events: auto;
+  }
+  .media-fallback {
+    padding: 60px 24px;
+    text-align: center;
+    color: #888;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+
+  .media-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 22px;
+    border-bottom: 1px solid var(--line);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #999999;
+  }
+  .round-body { padding: 20px 22px 26px; }
+  .ad-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.2rem, 4vw, 1.55rem);
+    line-height: 1.25;
+  }
+  .prompt {
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin-top: 4px;
+    margin-bottom: 18px;
+  }
+
+  /* ---------- Mode toggle ---------- */
+  .mode-toggle {
+    display: inline-flex;
+    background: var(--paper-dark);
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 18px;
+    gap: 2px;
+  }
+  .mode-toggle button {
+    font-family: var(--font-ui);
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all .18s ease;
+  }
+  .mode-toggle button.active {
+    background: var(--card);
+    color: var(--ink);
+    box-shadow: 0 2px 6px rgba(30, 36, 48, .12);
+  }
+
+  /* ---------- Direct entry ---------- */
+  .direct-entry { display: flex; gap: 12px; flex-wrap: wrap; }
+  .year-input {
+    flex: 1 1 160px;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: .12em;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    min-width: 0;
+    transition: border-color .15s ease;
+  }
+  .year-input:focus { outline: none; border-color: var(--accent); }
+  .year-input::placeholder { color: #bbbbbb; letter-spacing: .1em; }
+  .year-input::-webkit-outer-spin-button,
+  .year-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .year-input { -moz-appearance: textfield; appearance: textfield; }
+
+  /* ---------- Multiple choice ---------- */
+  .choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+  }
+  .choice {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 10px;
+    cursor: pointer;
+    transition: all .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .choice:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .choice:active { transform: scale(.97); }
+  .choice:disabled { cursor: default; opacity: .55; transform: none; }
+  .choice.correct {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+    opacity: 1;
+  }
+  .choice.wrong-pick {
+    background: var(--paper-dark);
+    border-color: #ccc;
+    color: #999;
+    text-decoration: line-through;
+    opacity: 1;
+  }
+
+  /* ---------- Feedback ---------- */
+  .feedback {
+    margin-top: 20px;
+    border-top: 2px dashed var(--line);
+    padding-top: 20px;
+    display: none;
+    animation: fadeUp .35s ease both;
+  }
+  .feedback.show { display: block; }
+  .verdict {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .points-chip {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 4px 16px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  .points-chip.good { background: var(--good); }
+  .points-chip.ok   { background: var(--ok); }
+  .points-chip.bad  { background: var(--bad); }
+  .verdict .detail { font-weight: 600; color: var(--ink-soft); }
+  .reveal-year {
+    font-size: .95rem;
+    margin-bottom: 10px;
+  }
+  .reveal-year b {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--accent);
+  }
+  .qmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    margin-left: 6px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    font-family: var(--font-ui);
+    font-size: .62rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    cursor: pointer;
+    position: relative;
+    vertical-align: 2px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .qmark:hover { border-color: var(--ink); color: var(--ink); }
+  .qmark .pop {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    max-width: 74vw;
+    background: var(--ink);
+    color: #fff;
+    font-size: .74rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px 13px;
+    border-radius: 8px;
+    z-index: 30;
+    cursor: default;
+  }
+  .qmark .pop::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+  .qmark.open { border-color: var(--ink); color: var(--ink); }
+  .qmark.open .pop { display: block; }
+  .placard-label {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+  .significance {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .fact {
+    background: var(--paper-dark);
+    border-left: 3px solid #ccc;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: .92rem;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .fact b { color: var(--ink); }
+  .source-link {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 400;
+    letter-spacing: .02em;
+    text-transform: none;
+    color: #999;
+    text-decoration: none;
+  }
+  .source-link:hover { color: var(--ink); text-decoration: underline; }
+  .listen-link {
+    display: inline-block;
+    font-size: .78rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+  }
+  .listen-link b { font-weight: 600; color: var(--ink); }
+  .listen-link:hover { border-color: var(--ink); }
+
+  .submit-row { margin-top: 20px; display: flex; justify-content: flex-end; }
+
+  /* ---------- Results ---------- */
+  .results { text-align: center; padding: 40px 8px 20px; }
+  .results .final-label {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .final-score {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(4rem, 18vw, 6.5rem);
+    line-height: 1;
+    color: var(--accent);
+    margin: 8px 0 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .final-outof { color: var(--ink-soft); font-weight: 600; margin-bottom: 22px; }
+  .badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--card);
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 16px 34px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+  }
+  .badge .medal { font-size: 2rem; }
+  .badge .rank {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  .badge .blurb { font-size: .85rem; color: var(--ink-soft); max-width: 300px; }
+
+  .breakdown {
+    max-width: 560px;
+    margin: 30px auto 30px;
+    text-align: left;
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .breakdown h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    padding: 14px 18px 12px;
+    border-bottom: 1.5px solid var(--line);
+  }
+  .breakdown-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    font-size: .88rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-row .num {
+    flex: 0 0 22px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .breakdown-row .t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .breakdown-row .yrs { color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .breakdown-row .pts {
+    flex: 0 0 52px;
+    text-align: right;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .pts.p10 { color: var(--ink); }
+  .pts.p8, .pts.p5 { color: #444; }
+  .pts.p3 { color: #777; }
+  .pts.p0 { color: #aaa; }
+
+  .end-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .share-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: .78rem;
+  }
+  .share-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+  }
+  .share-links a:hover { color: var(--ink); border-color: var(--ink); }
+
+  footer {
+    text-align: center;
+    margin-top: 44px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+  .foot-meta {
+    font-size: .64rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #999999;
+    margin-bottom: 6px;
+  }
+  .foot-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: .88rem;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  .foot-quote .attrib { font-style: normal; color: #999; white-space: nowrap; }
+  .foot-credit {
+    margin-top: 16px;
+    font-size: .64rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #999999;
+  }
+  .foot-credit a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .foot-credit a:hover { color: var(--ink); border-color: var(--ink); }
+
+  @media (max-width: 480px) {
+    .round-body { padding: 16px 16px 22px; }
+    .pill { padding: 4px 10px; font-size: .76rem; }
+    .choices { grid-template-columns: 1fr 1fr; }
+    .direct-entry { flex-direction: column; }
+    .direct-entry .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header id="header" style="display:none;">
+    <div class="header-inner">
+      <div class="brand">DATE THE AD<span class="tagline">A Marketing History Game</span></div>
+      <div class="hud">
+        <div class="stat"><span class="label">Round</span><span class="value" id="round-display">1/10</span></div>
+        <div class="stat score"><span class="label">Points</span><span class="value" id="score-display">0</span></div>
+      </div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="screen active" id="screen-intro">
+    <div class="intro">
+      <div class="wordmark">DATE THE AD</div>
+      <div class="wordmark-sub">A Marketing History Game</div>
+      <h1>Can you guess the year<br>of the <em>iconic ad</em>?</h1>
+      <p class="sub">We show you a historic advertisement, from Victorian soap posters to viral Super Bowl spots. You guess the year it ran.</p>
+      <button class="btn btn-primary" id="btn-start">Start the Quiz</button>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section class="screen" id="screen-game">
+    <div class="round-card">
+      <div class="media-frame" id="media-frame"></div>
+      <div class="media-caption"><span id="media-kind">Print advertisement</span><a class="source-link" id="media-source" href="#" target="_blank" rel="noopener">Source ↗</a></div>
+      <div class="round-body">
+        <h2 class="ad-title" id="ad-title"></h2>
+        <p class="prompt">What year did this ad first run?</p>
+
+        <div class="mode-toggle" id="mode-toggle">
+          <button type="button" data-mode="direct" class="active">Enter Year</button>
+          <button type="button" data-mode="choice">Multiple Choice</button>
+        </div>
+
+        <div id="input-area">
+          <div class="direct-entry" id="direct-entry">
+            <input type="number" inputmode="numeric" class="year-input" id="year-input"
+                   placeholder="e.g. 1965" min="1700" max="2026" aria-label="Your year guess">
+            <button class="btn btn-primary" id="btn-submit" disabled>Lock It In</button>
+          </div>
+          <div class="choices" id="choices" style="display:none;"></div>
+        </div>
+
+        <div class="feedback" id="feedback">
+          <div class="verdict">
+            <span class="points-chip" id="points-chip"></span>
+            <span class="detail" id="verdict-detail"></span>
+          </div>
+          <div class="reveal-year" id="reveal-year"></div>
+          <div class="placard-label">Why it matters</div>
+          <p class="significance" id="significance"></p>
+          <div class="fact" id="fact"></div>
+          <a class="listen-link" id="listen-link" href="#" target="_blank" rel="noopener" style="display:none;"></a>
+          <div class="submit-row">
+            <button class="btn btn-primary" id="btn-next">Next Round →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="screen" id="screen-results">
+    <div class="results">
+      <div class="final-label">Final Score</div>
+      <div class="final-score" id="final-score">0</div>
+      <div class="final-outof">out of 100 points</div>
+      <div class="badge">
+        <span class="medal" id="badge-medal">★</span>
+        <span class="rank" id="badge-rank"></span>
+        <span class="blurb" id="badge-blurb"></span>
+      </div>
+      <div class="breakdown">
+        <h3>Round-by-round</h3>
+        <div id="breakdown-rows"></div>
+      </div>
+      <div class="end-actions">
+        <button class="btn btn-primary" id="btn-share">Share Your Score</button>
+        <button class="btn btn-ghost" id="btn-again">Play Again</button>
+      </div>
+      <div class="share-links">
+        <a id="share-x" href="#" target="_blank" rel="noopener">Share on X</a>
+        <a id="share-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a id="share-li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="share-img" href="#">Download scorecard</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-meta">Media links to Wikimedia or YouTube source pages</div>
+    <div class="foot-quote" id="foot-quote"></div>
+    <div class="foot-credit">A companion to <a href="https://marketinghistory.org" target="_blank" rel="noopener">marketinghistory.org</a></div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CURRENT_YEAR = new Date().getFullYear();      // 2026 at time of writing
+  var VINTAGE_CUTOFF = CURRENT_YEAR - 100;          // ads older than 100 years score on the forgiving scale
+  var TOTAL_ROUNDS = 10;
+
+  // ---------------------------------------------------------------
+  // Data model: 10 iconic ads (5 pre-1926 vintage, 5 modern)
+  // ---------------------------------------------------------------
+  var ADS = [
+    {
+      id: 1,
+      title: "Pears' Soap — “Bubbles”",
+      year: 1886,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Bubbles_by_John_Everett_Millais.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Bubbles_by_John_Everett_Millais.jpg",
+      significance: "The moment advertising discovered fine art. Buying a Royal Academy painting to sell soap scandalized critics — and set the template for a century of aspirational brand imagery.",
+      fact: "Pears bought John Everett Millais' painting of his grandson and added a bar of soap to it. Millais was reportedly furious at first, then came around."
+    },
+    {
+      id: 2,
+      title: "Kodak — “You Press the Button, We Do the Rest”",
+      year: 1888,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/You_press_the_button,_we_do_the_rest_(Kodak).jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:You_press_the_button,_we_do_the_rest_(Kodak).jpg",
+      significance: "One of the first great advertising slogans — a promise of simplicity that sold a technology by hiding it. Every 'it just works' pitch since owes it a debt.",
+      fact: "George Eastman wrote the slogan himself to launch the first Kodak camera. It turned photography from a chemist's hobby into a mass-market pastime almost overnight."
+    },
+    {
+      id: 3,
+      title: "Michelin — “Nunc est Bibendum”",
+      year: 1898,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Michelin_Poster_1898.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Michelin_Poster_1898.jpg",
+      significance: "The birth of the brand mascot. Bibendum proved a company could be embodied by a character — decades before Tony the Tiger or Ronald McDonald existed.",
+      fact: "O'Galop's poster shows the Michelin Man toasting with a glass of nails and shards, because Michelin tires “drink up obstacles.” He's one of the oldest mascots still working."
+    },
+    {
+      id: 4,
+      title: "Coca-Cola — “Delicious and Refreshing”",
+      year: 1900,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cocacola-5cents-1900_edit1.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Cocacola-5cents-1900_edit1.jpg",
+      significance: "Among the first celebrity endorsements in American advertising — establishing the playbook of borrowing fame to build a brand that the industry still runs on.",
+      fact: "Music-hall star Hilda Clark was Coca-Cola's first celebrity endorser. At the time a glass cost five cents at the soda fountain — a price Coke famously held for over 70 years."
+    },
+    {
+      id: 5,
+      title: "U.S. Army — “I Want YOU” (Uncle Sam)",
+      year: 1917,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Unclesamwantyou.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Unclesamwantyou.jpg",
+      significance: "Propaganda as direct-response advertising. The pointing finger and the word “YOU” made the viewer the audience of one — among the most imitated compositions in poster history.",
+      fact: "James Montgomery Flagg used his own face (aged up, with a goatee) as the model for Uncle Sam. Over four million copies were printed during World War I."
+    },
+    {
+      id: 6,
+      title: "Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke)",
+      year: 1971,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/1VM2eLhvsSM",
+      sourceUrl: "https://www.youtube.com/watch?v=1VM2eLhvsSM",
+      significance: "The high-water mark of advertising idealism — selling a soft drink as world peace. It proved a commercial could jump the fence into pop culture and live there.",
+      fact: "Shot on a hillside in Italy after the original airfield shoot was rained out, the jingle was re-recorded as “I'd Like to Teach the World to Sing” and became a genuine chart hit — twice."
+    },
+    {
+      id: 7,
+      title: "Apple — “Big Brother” Macintosh launch",
+      year: 1984,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/VtvjbmoDx-I",
+      sourceUrl: "https://www.youtube.com/watch?v=VtvjbmoDx-I",
+      significance: "The Super Bowl ad as cultural event begins here. A product launch staged as dystopian cinema, it positioned the Mac not as a computer but as a creative tool.",
+      fact: "Directed by Ridley Scott fresh off Blade Runner, the Orwell-inspired spot aired nationally just once — and people still talk about it every February.",
+      listen: { label: "Tim Calkins: Why Super Bowl Ads Are Still Worth It", url: "https://marketinghistory.org/p/tim-calkins-super-bowl-ads" }
+    },
+    {
+      id: 8,
+      title: "Nike — “Just Do It” (first commercial)",
+      year: 1988,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/0yO7xLAGugQ",
+      sourceUrl: "https://www.youtube.com/watch?v=0yO7xLAGugQ",
+      significance: "Three words that turned a running-shoe company into a philosophy. The campaign made the brand — not the product — the hero, and modern sports marketing followed.",
+      fact: "The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan partly inspired — grimly — by a convicted murderer's last words."
+    },
+    {
+      id: 9,
+      title: "Budweiser — “Whassup?!”",
+      year: 1999,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/JJmqCKtJnxM",
+      sourceUrl: "https://www.youtube.com/watch?v=JJmqCKtJnxM",
+      titleSafe: true,
+      significance: "An early viral phenomenon — proof a catchphrase could carry a brand across talk shows, playgrounds, and the early internet without a single product claim.",
+      fact: "Adapted from Charles Stone III's short film 'True' and starring his real friends, “Whassup?!” won the Cannes Grand Prix and entered everyday speech."
+    },
+    {
+      id: 10,
+      title: "Old Spice — “The Man Your Man Could Smell Like”",
+      year: 2010,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/owGykVbfgUE",
+      sourceUrl: "https://www.youtube.com/watch?v=owGykVbfgUE",
+      titleSafe: true,
+      significance: "The ad that cracked the social-media era: made for TV, engineered for YouTube, and willing to answer its audience back in real time.",
+      fact: "Isaiah Mustafa's single-take monologue (horse included) debuted online before the Super Bowl. The follow-up campaign — 186 personalized YouTube replies filmed in two days — helped define social marketing."
+    },
+    {
+      id: 11,
+      title: "Volkswagen — “Think Small”",
+      year: 1959,
+      mediaType: "image",
+      mediaUrl: "https://en.wikipedia.org/wiki/Special:FilePath/Think_Small.jpg",
+      sourceUrl: "https://en.wikipedia.org/wiki/File:Think_Small.jpg",
+      significance: "Ad Age's #1 campaign of the century. DDB's honest, witty minimalism launched the Creative Revolution and taught advertising to treat readers as intelligent.",
+      fact: "Bill Bernbach's great innovation was pairing copywriters with art directors — a partnership that produced this ad's acres of white space and self-deprecating wit.",
+      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+    },
+    {
+      id: 12,
+      title: "Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene)",
+      year: 1979,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/xffOCZYX6F8",
+      sourceUrl: "https://www.youtube.com/watch?v=xffOCZYX6F8",
+      significance: "The template for emotional sports marketing: a 60-second story with no product claim — just human warmth between a weary hero and a kid with a Coke.",
+      fact: "The shoot took three days and dozens of Cokes. The spot won a Clio, spawned international remakes, and even inspired a TV movie."
+    },
+    {
+      id: 13,
+      title: "Wendy's — “Where's the Beef?”",
+      year: 1984,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/U80ebi4AKgs",
+      sourceUrl: "https://www.youtube.com/watch?v=U80ebi4AKgs",
+      significance: "Proof a catchphrase could escape the ad break entirely — it jumped into the presidential race when Walter Mondale aimed it at a rival in a debate.",
+      fact: "Clara Peller was an 81-year-old retired manicurist when she was cast. Wendy's sales jumped roughly 30% in the year the ad ran."
+    },
+    {
+      id: 14,
+      title: "Levi's — “Laundrette”",
+      year: 1985,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/mKa_uQCz3Hw",
+      sourceUrl: "https://www.youtube.com/watch?v=mKa_uQCz3Hw",
+      significance: "British advertising's pop-culture breakthrough: BBH sold jeans as cinema, lifted 501 sales roughly 800%, and sent its sixties soundtrack back up the charts.",
+      fact: "Nick Kamen stripping to his boxers to Marvin Gaye's “I Heard It Through the Grapevine” also triggered a national run on boxer shorts.",
+      listen: { label: "Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand", url: "https://marketinghistory.org/p/tracey-panek-levis-corporate-historian" }
+    },
+    {
+      id: 15,
+      title: "Snickers — “You're Not You When You're Hungry”",
+      year: 2010,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/GkAnLtqWDhc",
+      sourceUrl: "https://www.youtube.com/watch?v=GkAnLtqWDhc",
+      significance: "The modern global platform: one insight — hunger changes you — translated into more than 80 markets from a single Super Bowl debut.",
+      fact: "The Betty White spot launched the campaign. Fans then petitioned for White to host SNL, which she did months later at age 88.",
+      listen: { label: "Tim Calkins: Why Super Bowl Ads Are Still Worth It", url: "https://marketinghistory.org/p/tim-calkins-super-bowl-ads" }
+    },
+    {
+      id: 16,
+      title: "Apple — “Think Different” (Here's to the Crazy Ones)",
+      year: 1997,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/5sMBhDv4sik",
+      sourceUrl: "https://www.youtube.com/watch?v=5sMBhDv4sik",
+      titleSafe: true,
+      significance: "Apple's comeback manifesto. Aired weeks after Steve Jobs returned, it rebuilt the brand as a creative tool for rebels — the positioning Apple trades on to this day.",
+      fact: "Richard Dreyfuss narrated the broadcast version, but a cut voiced by Jobs himself exists — he decided at the last minute it shouldn't be about him."
+    },
+    {
+      id: 17,
+      title: "Volvo Trucks — “The Epic Split”",
+      year: 2013,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/M7FIvfx5J10",
+      sourceUrl: "https://www.youtube.com/watch?v=M7FIvfx5J10",
+      titleSafe: true,
+      significance: "The B2B ad that went pop: a steering-precision demo for truck buyers became one of the most-shared ads ever made.",
+      fact: "Jean-Claude Van Damme performed the split for real between two reversing trucks, shot in one take at dawn to Enya's “Only Time.”"
+    },
+    {
+      id: 18,
+      title: "Got Milk? — “Aaron Burr”",
+      year: 1993,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/0Gkqzxss8Ss",
+      sourceUrl: "https://www.youtube.com/watch?v=0Gkqzxss8Ss",
+      significance: "The deprivation strategy in one spot: sell the product by imagining its absence. It launched one of America's longest-running campaigns.",
+      fact: "A young Michael Bay directed it for Goodby Silverstein: a peanut-butter-mouthed history buff who can't say “Aaron Burr” loses a $10,000 radio quiz."
+    },
+    {
+      id: 19,
+      title: "Apple — “Get a Mac” (I'm a Mac)",
+      year: 2006,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/48jlm6QSU4k",
+      sourceUrl: "https://www.youtube.com/watch?v=48jlm6QSU4k",
+      titleSafe: true,
+      significance: "Positioning as sitcom: 66 spots that personified two computers and made the competitor the punchline without citing a single spec.",
+      fact: "Justin Long played Mac, John Hodgman played PC. Adweek later named it the best campaign of the decade."
+    },
+    {
+      id: 20,
+      title: "Google Chrome — “Dear Sophie”",
+      year: 2011,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/Btp0Yr7wdzI",
+      sourceUrl: "https://www.youtube.com/watch?v=Btp0Yr7wdzI",
+      titleSafe: true,
+      significance: "Google turned a browser into a tearjerker — a father emailing his growing daughter — proving utility products could own emotional storytelling.",
+      fact: "Part of “The Web Is What You Make of It” campaign, it compressed an entire childhood into two minutes of inbox entries."
+    },
+    {
+      id: 21,
+      title: "Dollar Shave Club — “Our Blades Are F***ing Great”",
+      year: 2012,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/ZUG9qYTJMsI",
+      sourceUrl: "https://www.youtube.com/watch?v=ZUG9qYTJMsI",
+      titleSafe: true,
+      significance: "The $4,500 video that helped topple a giant: direct-to-consumer swagger with the founder as star and a punchline every five seconds.",
+      fact: "Michael Dubin wrote and starred; the site crashed within an hour of launch. Unilever later bought the company for a reported $1 billion."
+    },
+    {
+      id: 22,
+      title: "Metro Trains — “Dumb Ways to Die”",
+      year: 2012,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/IJNR2EpS0jw",
+      sourceUrl: "https://www.youtube.com/watch?v=IJNR2EpS0jw",
+      titleSafe: true,
+      significance: "Public-safety messaging reinvented as a pop song — morbid, adorable, and the most-awarded campaign in Cannes Lions history.",
+      fact: "Made for Melbourne's Metro Trains, the song charted on iTunes in 28 countries and the spin-off game passed 100 million downloads."
+    },
+    {
+      id: 23,
+      title: "IKEA — “Lamp”",
+      year: 2002,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/jU-cori12KU",
+      sourceUrl: "https://www.youtube.com/watch?v=jU-cori12KU",
+      significance: "Anti-sentimentality as strategy: Spike Jonze made viewers mourn a discarded lamp, then punctured the emotion to sell “new and better.” Won the Cannes Grand Prix.",
+      fact: "The Swedish man who scolds you — “you're crazy, it has no feelings” — delivered the twist standing in fake Los Angeles rain."
+    },
+    {
+      id: 24,
+      title: "Guinness — “Surfer”",
+      year: 1999,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/rE1lIdtDs2g",
+      sourceUrl: "https://www.youtube.com/watch?v=rE1lIdtDs2g",
+      significance: "“Good things come to those who wait” turned a slow pour into mythology — white horses in the surf, routinely voted the best British ad ever made.",
+      fact: "AMV BBDO's voiceover channels Moby-Dick's Ahab; real big-wave surfers were blended with CGI horses over a drum-and-bass track."
+    },
+    {
+      id: 25,
+      title: "Honda — “Cog”",
+      year: 2003,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/w4XiaP-WhNw",
+      sourceUrl: "https://www.youtube.com/watch?v=w4XiaP-WhNw",
+      titleSafe: true,
+      significance: "Two minutes, 85 Accord parts, one unbroken chain reaction, no CGI — craft itself became the selling point, and the internet did the media buy.",
+      fact: "It took 606 takes. Too long for most TV slots, it spread online instead — an early sign that great ads no longer needed airtime."
+    },
+    {
+      id: 26,
+      title: "Marlboro — The Marlboro Man",
+      year: 1955,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/N6xa30WYgT4",
+      sourceUrl: "https://www.youtube.com/watch?v=N6xa30WYgT4",
+      titleSafe: true,
+      significance: "The most effective rebrand in history: Leo Burnett took a “mild as May” cigarette marketed to women and made it the best-selling brand on earth with one cowboy.",
+      fact: "Within two years of the cowboy's debut, Marlboro's US sales had multiplied more than tenfold. The imagery ran until tobacco left the airwaves."
+    },
+    {
+      id: 27,
+      title: "Xerox — 914 Copier (Sam the Chimpanzee)",
+      year: 1960,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/hkEykPawTrg",
+      sourceUrl: "https://www.youtube.com/watch?v=hkEykPawTrg",
+      titleSafe: true,
+      significance: "Demonstration advertising at its cheekiest: if a chimpanzee can make a copy, anyone can. It sold a machine by selling effortlessness.",
+      fact: "The Xerox 914 became so dominant that “to xerox” entered the language as a verb — a trademark lawyer's nightmare, a marketer's dream."
+    },
+    {
+      id: 28,
+      title: "Nintendo — Super Smash Bros. “Happy Together”",
+      year: 1999,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/K783SDTBKmg",
+      sourceUrl: "https://www.youtube.com/watch?v=K783SDTBKmg",
+      titleSafe: true,
+      significance: "Nintendo sold a fighting game as absurdist comedy — beloved mascots brawling in a meadow to “Happy Together” — a tone the franchise still uses.",
+      fact: "The costumed Mario, Yoshi, Pikachu, and DK shoot launched an N64 series that became Nintendo's best-selling crossover juggernaut."
+    },
+    {
+      id: 29,
+      title: "Taco Bell — “Yo Quiero Taco Bell” (Chihuahua)",
+      year: 1997,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/aKLW0kQ83qg",
+      sourceUrl: "https://www.youtube.com/watch?v=aKLW0kQ83qg",
+      significance: "A talking dog became a national catchphrase — and later a cautionary tale about mascots whose fame outruns the sales they're meant to drive.",
+      fact: "Gidget, the female Chihuahua who played the male dog, got a movie cameo out of it. The campaign ended when sales lagged behind the fame."
+    },
+    {
+      id: 30,
+      title: "Dove — “Evolution”",
+      year: 2006,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/DCNEIwxkPlc",
+      sourceUrl: "https://www.youtube.com/watch?v=DCNEIwxkPlc",
+      titleSafe: true,
+      significance: "The film that launched the purpose era: a time-lapse from model to billboard exposed manufactured beauty and made media literacy a brand platform.",
+      fact: "Made by Ogilvy Toronto on a shoestring, it earned an estimated 500 times its budget in free media and won two Grand Prix at Cannes."
+    },
+    {
+      id: 31,
+      title: "British Airways — “Manhattan”",
+      year: 1983,
+      mediaType: "video",
+      mediaUrl: "https://www.youtube.com/embed/vZu0y-D6BMs",
+      sourceUrl: "https://www.youtube.com/watch?v=vZu0y-D6BMs",
+      significance: "Saatchi & Saatchi's spectacle for “the world's favourite airline”: flying Manhattan island across the Atlantic, with Hollywood effects no airline ad had attempted.",
+      fact: "The premise: BA flies more people across the Atlantic every year than the entire population of Manhattan."
+    },
+    {
+      id: 32,
+      title: "Westinghouse — “We Can Do It!” (Rosie the Riveter)",
+      year: 1943,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/We_Can_Do_It!.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:We_Can_Do_It!.jpg",
+      significance: "Wartime internal propaganda turned feminist icon: made to boost factory morale, rediscovered decades later as shorthand for women's economic power.",
+      fact: "J. Howard Miller's poster hung in Westinghouse plants for just two weeks. It only became “Rosie the Riveter” when the 1980s rediscovered it."
+    },
+    {
+      id: 33,
+      title: "Lucky Strike — “It's Toasted”",
+      year: 1917,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Lucky_strike_it%27s_toasted.jpg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Lucky_strike_it%27s_toasted.jpg",
+      significance: "The “reason why” school in three words: every maker toasted its tobacco, but Lucky Strike claimed the process first — a move marketers still copy.",
+      fact: "The slogan from Albert Lasker's golden era still appears on the pack more than a century after it was written.",
+      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+    },
+    {
+      id: 34,
+      title: "Clark Stanley — Snake Oil Liniment",
+      year: 1905,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Clark_Stanley%27s_Snake_Oil_Liniment.png",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Clark_Stanley%27s_Snake_Oil_Liniment.png",
+      significance: "The ad that named a whole genre of deception. Patent-medicine hype like Stanley's is why “snake oil salesman” means what it means — and why ad regulation exists.",
+      fact: "Federal chemists eventually found the liniment contained no snake oil at all. Stanley was fined $20, and truth-in-advertising law followed the era's abuses.",
+      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+    },
+    {
+      id: 35,
+      title: "New York State — “I ❤ NY”",
+      year: 1977,
+      mediaType: "image",
+      mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/I_Love_New_York.svg",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:I_Love_New_York.svg",
+      lightBg: true,
+      significance: "Place branding's masterpiece: Milton Glaser's logo, made for a bankrupt, crime-ridden city, became the most imitated tourism mark on earth.",
+      fact: "Glaser sketched the concept on scrap paper in a taxi — the sketch is now in MoMA — and did the work pro bono, expecting it to run a few months."
+    }
+  ];
+
+  // ---------------------------------------------------------------
+  // Scoring
+  // ---------------------------------------------------------------
+  function isVintage(year) { return year < VINTAGE_CUTOFF; }
+
+  function scoreGuess(actualYear, guess) {
+    var diff = Math.abs(actualYear - guess);
+    if (isVintage(actualYear)) {
+      if (diff === 0) return 10;
+      if (diff <= 3)  return 8;
+      if (diff <= 7)  return 5;
+      if (diff <= 20) return 3;
+      return 0;
+    } else {
+      if (diff === 0)  return 10;
+      if (diff === 1)  return 8;
+      if (diff <= 5)   return 5;
+      if (diff <= 10)  return 3;
+      return 0;
+    }
+  }
+
+  // Rotating footer epigraphs. One is picked at load and again each new game.
+  var QUOTES = [
+    { t: "Nobody reads ads. People read what interests them. Sometimes it's an ad.", a: "Howard Luck Gossage" },
+    { t: "Advertising is the greatest art form of the twentieth century.", a: "Marshall McLuhan" },
+    { t: "Many a small thing has been made large by the right kind of advertising.", a: "Mark Twain" },
+    { t: "Advertising isn't a science. It's persuasion. And persuasion is an art.", a: "Bill Bernbach" },
+    { t: "The quality of the idea and the excellence of its execution was the alpha and omega of successful advertising.", a: "David Ogilvy" },
+    { t: "It did what all ads are supposed to do: create an anxiety relievable by purchase.", a: "David Foster Wallace" },
+    { t: "Marketing is about selling more stuff to more people more often for more money more efficiently. That's what marketing is.", a: "Sergio Zyman" },
+    { t: "The job of advertising is to lay down memory structures.", a: "Byron Sharp" },
+    { t: "The most powerful element in advertising is the truth.", a: "Bill Bernbach" },
+    { t: "Nobody counts the number of ads you run; they just remember the impression you make.", a: "Bill Bernbach" },
+    { t: "When you reach for the stars you may not quite get one, but you won't come up with a handful of mud either.", a: "Leo Burnett" },
+    { t: "Make it simple. Make it memorable. Make it inviting to look at.", a: "Leo Burnett" },
+    { t: "Advertising is salesmanship in print.", a: "John E. Kennedy" },
+    { t: "The only purpose of advertising is to make sales.", a: "Claude Hopkins" },
+    { t: "The consumer tends to remember just one thing from an advertisement: one strong claim, or one strong concept.", a: "Rosser Reeves" },
+    { t: "Advertising is the rattling of a stick inside a swill bucket.", a: "George Orwell" },
+    { t: "You can tell the ideals of a nation by its advertisements.", a: "Norman Douglas" },
+    { t: "Advertising may be described as the science of arresting human intelligence long enough to get money from it.", a: "Stephen Leacock" },
+    { t: "Advertising is what you do when you can't go see somebody. That's all it is.", a: "Fairfax Cone" },
+    { t: "Advertising is the most fun you can have with your clothes on.", a: "Jerry Della Femina" },
+    { t: "Marketing is not the art of finding clever ways to dispose of what you make. It is the art of creating genuine customer value.", a: "Philip Kotler" },
+    { t: "The opposite of a good idea can also be a good idea.", a: "Rory Sutherland" }
+  ];
+
+  function renderQuote() {
+    var q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    $("foot-quote").innerHTML = "“" + q.t.replace(/'/g, "’") +
+      "” <span class=\"attrib\">— " + q.a + "</span>";
+  }
+
+  var RANKS = [
+    { min: 90, medal: "★", rank: "Advertising Legend", blurb: "A century of campaigns and you barely missed a beat. The archive has nothing left to teach you." },
+    { min: 70, medal: "✦", rank: "Creative Director",  blurb: "Corner office material. You know your Hilltops from your Whassups." },
+    { min: 40, medal: "✎", rank: "Junior Copywriter",  blurb: "Promising! A few more late nights in the archives and you'll make the big leagues." },
+    { min: 0,  medal: "○", rank: "Coffee Intern",      blurb: "Hey, everyone starts somewhere. The mailroom of ad history awaits." }
+  ];
+
+  // ---------------------------------------------------------------
+  // Game state
+  // ---------------------------------------------------------------
+  var state = {
+    order: [],        // shuffled copy of ADS
+    round: 0,         // 0-based index
+    score: 0,
+    results: [],      // { ad, guess, points }
+    answered: false,
+    inputMode: "direct",
+    choices: []       // cached options for the current round
+  };
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  // Build 1 correct year + 3 plausible distractors, tailored to the era
+  function buildChoices(ad) {
+    var offsets = isVintage(ad.year)
+      ? [2, 3, 4, 5, 6, 8, 10, 12, 15, 18]
+      : [1, 2, 3, 4, 5, 6, 7, 8, 10, 12];
+    var years = {};
+    years[ad.year] = true;
+    var list = [ad.year];
+    var guard = 0;
+    while (list.length < 4 && guard < 200) {
+      guard++;
+      var off = offsets[Math.floor(Math.random() * offsets.length)];
+      var candidate = ad.year + (Math.random() < 0.5 ? -off : off);
+      if (candidate > CURRENT_YEAR) candidate = ad.year - off;
+      if (candidate < 1700 || years[candidate]) continue;
+      years[candidate] = true;
+      list.push(candidate);
+    }
+    return shuffle(list);
+  }
+
+  // ---------------------------------------------------------------
+  // DOM refs
+  // ---------------------------------------------------------------
+  function $(id) { return document.getElementById(id); }
+  var els = {
+    header: $("header"),
+    screens: {
+      intro: $("screen-intro"),
+      game: $("screen-game"),
+      results: $("screen-results")
+    },
+    roundDisplay: $("round-display"),
+    scoreDisplay: $("score-display"),
+    progressFill: $("progress-fill"),
+    mediaFrame: $("media-frame"),
+    adTitle: $("ad-title"),
+    modeToggle: $("mode-toggle"),
+    directEntry: $("direct-entry"),
+    yearInput: $("year-input"),
+    btnSubmit: $("btn-submit"),
+    choices: $("choices"),
+    feedback: $("feedback"),
+    pointsChip: $("points-chip"),
+    verdictDetail: $("verdict-detail"),
+    revealYear: $("reveal-year"),
+    significance: $("significance"),
+    fact: $("fact"),
+    mediaKind: $("media-kind"),
+    mediaSource: $("media-source"),
+    listenLink: $("listen-link"),
+    btnNext: $("btn-next"),
+    finalScore: $("final-score"),
+    badgeMedal: $("badge-medal"),
+    badgeRank: $("badge-rank"),
+    badgeBlurb: $("badge-blurb"),
+    breakdownRows: $("breakdown-rows")
+  };
+
+  function showScreen(name) {
+    Object.keys(els.screens).forEach(function (k) {
+      els.screens[k].classList.toggle("active", k === name);
+    });
+    els.header.style.display = (name === "game") ? "" : "none";
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+  }
+
+  // ---------------------------------------------------------------
+  // Rendering
+  // ---------------------------------------------------------------
+  function renderHud() {
+    els.roundDisplay.textContent = (state.round + 1) + "/" + TOTAL_ROUNDS;
+    els.scoreDisplay.textContent = state.score;
+    els.progressFill.style.width = ((state.round) / TOTAL_ROUNDS * 100) + "%";
+  }
+
+  function renderMedia(ad) {
+    els.mediaFrame.innerHTML = "";
+    els.mediaFrame.classList.toggle("on-light", !!ad.lightBg);
+    if (ad.mediaType === "video") {
+      var wrap = document.createElement("div");
+      wrap.className = "video-wrap";
+      var iframe = document.createElement("iframe");
+      iframe.src = ad.mediaUrl + "?rel=0&modestbranding=1";
+      iframe.title = "Mystery advertisement";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      wrap.appendChild(iframe);
+      if (!ad.titleSafe) {
+        var guard = document.createElement("div");
+        guard.className = "spoiler-guard";
+        guard.textContent = "Title hidden";
+        wrap.appendChild(guard);
+      }
+      els.mediaFrame.appendChild(wrap);
+    } else {
+      var img = document.createElement("img");
+      img.src = ad.mediaUrl;
+      img.alt = "Historical advertisement (year hidden)";
+      img.loading = "eager";
+      img.onerror = function () {
+        els.mediaFrame.innerHTML = '<div class="media-fallback">“' + ad.title + '”<br><small>image unavailable — trust your gut</small></div>';
+      };
+      els.mediaFrame.appendChild(img);
+    }
+  }
+
+  function renderInputMode() {
+    var buttons = els.modeToggle.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.toggle("active", buttons[i].getAttribute("data-mode") === state.inputMode);
+    }
+    var direct = state.inputMode === "direct";
+    els.directEntry.style.display = direct ? "" : "none";
+    els.choices.style.display = direct ? "none" : "";
+  }
+
+  function renderChoices() {
+    els.choices.innerHTML = "";
+    state.choices.forEach(function (year) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "choice";
+      b.textContent = year;
+      b.addEventListener("click", function () { submitGuess(year, b); });
+      els.choices.appendChild(b);
+    });
+  }
+
+  function sourceName(url) {
+    if (url.indexOf("youtube") !== -1) return "YouTube";
+    if (url.indexOf("commons.wikimedia") !== -1) return "Wikimedia Commons";
+    if (url.indexOf("wikipedia.org") !== -1) return "Wikipedia";
+    return "Original";
+  }
+
+  function startRound() {
+    var ad = state.order[state.round];
+    state.answered = false;
+    state.choices = buildChoices(ad);
+
+    renderHud();
+    renderMedia(ad);
+    els.mediaKind.textContent = ad.mediaType === "video" ? "Television commercial" : "Print advertisement";
+    els.mediaSource.href = ad.sourceUrl;
+    els.mediaSource.textContent = "Source: " + sourceName(ad.sourceUrl) + " ↗";
+    var SUBMIT_LABELS = ["Lock It In", "That's My Guess", "Final Answer", "Ship It"];
+    els.btnSubmit.textContent = SUBMIT_LABELS[Math.floor(Math.random() * SUBMIT_LABELS.length)];
+    els.adTitle.textContent = ad.title;
+    els.yearInput.value = "";
+    els.btnSubmit.disabled = true;
+    renderChoices();
+    renderInputMode();
+    els.feedback.classList.remove("show");
+    els.modeToggle.style.display = "";
+    $("input-area").style.display = "";
+  }
+
+  // ---------------------------------------------------------------
+  // Guess handling
+  // ---------------------------------------------------------------
+  function submitGuess(guess, choiceBtn) {
+    if (state.answered) return;
+    state.answered = true;
+
+    var ad = state.order[state.round];
+    var points = scoreGuess(ad.year, guess);
+    var diff = Math.abs(ad.year - guess);
+    state.score += points;
+    state.results.push({ ad: ad, guess: guess, points: points });
+
+    // Freeze choice buttons and color them
+    var choiceButtons = els.choices.querySelectorAll(".choice");
+    for (var i = 0; i < choiceButtons.length; i++) {
+      choiceButtons[i].disabled = true;
+      var y = parseInt(choiceButtons[i].textContent, 10);
+      if (y === ad.year) choiceButtons[i].classList.add("correct");
+      else if (choiceButtons[i] === choiceBtn) choiceButtons[i].classList.add("wrong-pick");
+    }
+    els.btnSubmit.disabled = true;
+    els.yearInput.disabled = true;
+
+    // Verdict
+    var chipClass = points >= 8 ? "good" : (points >= 3 ? "ok" : "bad");
+    els.pointsChip.className = "points-chip " + chipClass;
+    els.pointsChip.textContent = "+" + points + " pts";
+    els.verdictDetail.textContent =
+      diff === 0 ? "Bullseye — exact year!" :
+      "Off by " + diff + " year" + (diff === 1 ? "" : "s") +
+      (points === 0 ? " — tough one!" : "");
+    els.revealYear.innerHTML =
+      "You guessed <b>" + guess + "</b> &nbsp;·&nbsp; Correct year: <b>" + ad.year + "</b>" +
+      (isVintage(ad.year)
+        ? ' <span class="qmark" role="button" tabindex="0" aria-label="About vintage scoring">?<span class="pop">This ad is over a century old, so it scores on a gentler curve: exact year = 10 pts, within 3 years = 8, within 7 = 5, within 20 = 3. Newer ads use tighter margins.</span></span>'
+        : "");
+    els.significance.textContent = ad.significance;
+    els.fact.innerHTML = "<b>Did you know?</b> " + ad.fact;
+    if (ad.listen) {
+      els.listenLink.style.display = "";
+      els.listenLink.href = ad.listen.url;
+      els.listenLink.innerHTML = "<b>Related listening:</b> " + ad.listen.label + " ↗";
+    } else {
+      els.listenLink.style.display = "none";
+    }
+
+    els.btnNext.textContent = (state.round + 1 === TOTAL_ROUNDS) ? "See Final Score →" : "Next Round →";
+    els.feedback.classList.add("show");
+    els.progressFill.style.width = ((state.round + 1) / TOTAL_ROUNDS * 100) + "%";
+    renderHud();
+    els.progressFill.style.width = ((state.round + 1) / TOTAL_ROUNDS * 100) + "%";
+    els.feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function currentTier() {
+    return RANKS.filter(function (r) { return state.score >= r.min; })[0];
+  }
+
+  function shareText() {
+    return "I scored " + state.score + "/100 on Date the Ad — A Marketing History Game. Rank: " +
+      currentTier().rank + ". Can you guess the year of the iconic ad?";
+  }
+
+  function pageUrl() {
+    return location.href.split("#")[0].split("?")[0];
+  }
+
+  function drawScorecard() {
+    var W = 1080, H = 1350;
+    var c = document.createElement("canvas");
+    c.width = W; c.height = H;
+    var x = c.getContext("2d");
+    x.fillStyle = "#ffffff";
+    x.fillRect(0, 0, W, H);
+    x.fillStyle = "#111111";
+    x.textAlign = "center";
+
+    x.font = "700 64px Spectral, Georgia, serif";
+    x.fillText("D A T E   T H E   A D", W / 2, 120);
+    x.font = "italic 600 34px Spectral, Georgia, serif";
+    x.fillStyle = "#666666";
+    x.fillText("A Marketing History Game", W / 2, 170);
+
+    x.strokeStyle = "#e5e5e5";
+    x.lineWidth = 2;
+    x.beginPath(); x.moveTo(120, 215); x.lineTo(W - 120, 215); x.stroke();
+
+    x.fillStyle = "#666666";
+    x.font = "600 26px 'IBM Plex Sans', sans-serif";
+    x.fillText("F I N A L   S C O R E", W / 2, 280);
+    x.fillStyle = "#111111";
+    x.font = "700 200px Spectral, Georgia, serif";
+    x.fillText(String(state.score), W / 2, 470);
+    x.fillStyle = "#666666";
+    x.font = "600 34px 'IBM Plex Sans', sans-serif";
+    x.fillText("out of 100 points", W / 2, 525);
+    x.fillStyle = "#111111";
+    x.font = "700 52px Spectral, Georgia, serif";
+    x.fillText(currentTier().medal + "  " + currentTier().rank, W / 2, 605);
+
+    x.beginPath(); x.moveTo(120, 655); x.lineTo(W - 120, 655); x.stroke();
+
+    x.textAlign = "left";
+    var y = 715;
+    for (var i = 0; i < state.results.length; i++) {
+      var r = state.results[i];
+      var t = r.ad.title.replace(/[“”]/g, '"');
+      if (t.length > 38) t = t.slice(0, 37) + "…";
+      x.fillStyle = "#999999";
+      x.font = "500 26px 'IBM Plex Sans', sans-serif";
+      x.fillText(String(i + 1).length < 2 ? "0" + (i + 1) : String(i + 1), 120, y);
+      x.fillStyle = "#111111";
+      x.fillText(t, 180, y);
+      x.textAlign = "right";
+      x.fillStyle = "#666666";
+      x.fillText(r.guess + " → " + r.ad.year, W - 240, y);
+      x.fillStyle = r.points >= 8 ? "#111111" : (r.points >= 3 ? "#555555" : "#aaaaaa");
+      x.font = "700 26px 'IBM Plex Sans', sans-serif";
+      x.fillText("+" + r.points, W - 120, y);
+      x.textAlign = "left";
+      y += 52;
+    }
+
+    x.strokeStyle = "#e5e5e5";
+    x.beginPath(); x.moveTo(120, y + 10); x.lineTo(W - 120, y + 10); x.stroke();
+    x.textAlign = "center";
+    x.fillStyle = "#999999";
+    x.font = "500 24px 'IBM Plex Sans', sans-serif";
+    x.fillText("Can you guess the year of the iconic ad?", W / 2, y + 65);
+    return c;
+  }
+
+  function endGame() {
+    els.finalScore.textContent = state.score;
+    var tier = currentTier();
+    els.badgeMedal.textContent = tier.medal;
+    els.badgeRank.textContent = tier.rank;
+    els.badgeBlurb.textContent = tier.blurb;
+
+    var text = shareText();
+    var url = pageUrl();
+    $("share-x").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text + " " + url);
+    $("share-fb").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(text);
+    $("share-li").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+
+    els.breakdownRows.innerHTML = "";
+    state.results.forEach(function (r, i) {
+      var row = document.createElement("div");
+      row.className = "breakdown-row";
+      row.innerHTML =
+        '<span class="num">' + (i + 1) + '</span>' +
+        '<span class="t">' + r.ad.title + '</span>' +
+        '<span class="yrs">' + r.guess + ' → ' + r.ad.year + '</span>' +
+        '<span class="pts p' + r.points + '">+' + r.points + '</span>';
+      els.breakdownRows.appendChild(row);
+    });
+    showScreen("results");
+  }
+
+  function resetGame() {
+    state.order = shuffle(ADS);
+    state.round = 0;
+    state.score = 0;
+    state.results = [];
+    state.answered = false;
+    els.yearInput.disabled = false;
+    renderQuote();
+    showScreen("game");
+    startRound();
+  }
+
+  // ---------------------------------------------------------------
+  // Events
+  // ---------------------------------------------------------------
+  $("btn-start").addEventListener("click", resetGame);
+  $("btn-again").addEventListener("click", resetGame);
+
+  $("btn-share").addEventListener("click", function () {
+    var text = shareText();
+    var url = pageUrl();
+    if (navigator.share) {
+      navigator.share({ title: "Date the Ad — A Marketing History Game", text: text, url: url }).catch(function () {});
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text + " " + url).then(function () {
+        var b = $("btn-share");
+        b.textContent = "Copied to clipboard!";
+        setTimeout(function () { b.textContent = "Share Your Score"; }, 2000);
+      });
+    }
+  });
+
+  $("share-img").addEventListener("click", function (e) {
+    e.preventDefault();
+    var render = function () {
+      var canvas = drawScorecard();
+      var a = document.createElement("a");
+      a.download = "date-the-ad-scorecard.png";
+      a.href = canvas.toDataURL("image/png");
+      a.click();
+    };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+    else render();
+  });
+
+  // "?" info bubbles: tap to toggle, tap elsewhere (or Escape) to close
+  document.addEventListener("click", function (e) {
+    var q = e.target.closest ? e.target.closest(".qmark") : null;
+    if (q && e.target.closest(".pop")) return;   // clicks inside the bubble don't close it
+    var open = document.querySelectorAll(".qmark.open");
+    for (var i = 0; i < open.length; i++) {
+      if (open[i] !== q) open[i].classList.remove("open");
+    }
+    if (q) q.classList.toggle("open");
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      var open = document.querySelectorAll(".qmark.open");
+      for (var i = 0; i < open.length; i++) open[i].classList.remove("open");
+    } else if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("qmark")) {
+      e.preventDefault();
+      e.target.classList.toggle("open");
+    }
+  });
+
+  els.modeToggle.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-mode]");
+    if (!btn || state.answered) return;
+    state.inputMode = btn.getAttribute("data-mode");
+    renderInputMode();
+    if (state.inputMode === "direct") els.yearInput.focus();
+  });
+
+  els.yearInput.addEventListener("input", function () {
+    var v = parseInt(els.yearInput.value, 10);
+    els.btnSubmit.disabled = !(v >= 1700 && v <= CURRENT_YEAR);
+  });
+  els.yearInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !els.btnSubmit.disabled) submitGuess(parseInt(els.yearInput.value, 10), null);
+  });
+  els.btnSubmit.addEventListener("click", function () {
+    var v = parseInt(els.yearInput.value, 10);
+    if (v >= 1700 && v <= CURRENT_YEAR) submitGuess(v, null);
+  });
+
+  els.btnNext.addEventListener("click", function () {
+    state.round++;
+    els.yearInput.disabled = false;
+    if (state.round >= TOTAL_ROUNDS) endGame();
+    else startRound();
+  });
+
+  renderQuote();
+})();
+</script>
+</body>
+</html>
