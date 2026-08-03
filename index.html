@@ -526,17 +526,38 @@
     text-decoration: none;
   }
   .source-link:hover { color: var(--ink); text-decoration: underline; }
-  .listen-link {
-    display: inline-block;
+  .listen-block {
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .listen-label {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .listen-item { margin-bottom: 9px; }
+  .listen-item:last-child { margin-bottom: 0; }
+  .listen-item a {
+    font-family: var(--font-display);
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+  }
+  .listen-item a:hover { border-color: var(--ink); }
+  .listen-item .note {
+    display: block;
     font-size: .78rem;
     color: var(--ink-soft);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 1px;
-    margin-bottom: 4px;
+    margin-top: 2px;
   }
-  .listen-link b { font-weight: 600; color: var(--ink); }
-  .listen-link:hover { border-color: var(--ink); }
 
   .submit-row { margin-top: 20px; display: flex; justify-content: flex-end; }
 
@@ -747,7 +768,10 @@
           <div class="placard-label">Why it matters</div>
           <p class="significance" id="significance"></p>
           <div class="fact" id="fact"></div>
-          <a class="listen-link" id="listen-link" href="#" target="_blank" rel="noopener" style="display:none;"></a>
+          <div class="listen-block" id="listen-block" style="display:none;">
+            <div class="listen-label">Hear more on A History of Marketing</div>
+            <div id="listen-items"></div>
+          </div>
           <div class="submit-row">
             <button class="btn btn-primary" id="btn-next">Next Round →</button>
           </div>
@@ -800,7 +824,31 @@
   var TOTAL_ROUNDS = 10;
 
   // ---------------------------------------------------------------
-  // Data model: 10 iconic ads (5 pre-1926 vintage, 5 modern)
+  // A History of Marketing episodes, referenced by the ads below.
+  // ---------------------------------------------------------------
+  var EP = {
+    tungate:  { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" },
+    calkins:  { label: "Tim Calkins: Why Super Bowl Ads Are Still Worth It", url: "https://marketinghistory.org/p/tim-calkins-super-bowl-ads" },
+    bernays:  { label: "Larry Tye on Edward Bernays: “The Father of Public Relations”", url: "https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father" },
+    asbury:   { label: "Nick Asbury: The Case Against “Purpose”", url: "https://marketinghistory.org/p/nick-asbury-the-case-against-purpose" },
+    aaker:    { label: "David Aaker: “The Father of Modern Branding” Returns", url: "https://marketinghistory.org/p/david-aaker-the-father-of-branding-returns" },
+    tedlow:   { label: "Richard S. Tedlow: The Story of Mass Marketing in America", url: "https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america" },
+    reames:   { label: "Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh", url: "https://marketinghistory.org/p/scott-reames-nike-historian" },
+    gluckman: { label: "David Gluckman: Why the Inventor of Baileys Thinks Market Research is Bullsh*t", url: "https://marketinghistory.org/p/david-gluckman-inventor-of-baileys" },
+    zyman1:   { label: "Sergio Zyman, Part 1: “The First Chief Marketing Officer”", url: "https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer" },
+    zyman2:   { label: "Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”", url: "https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing" },
+    feldwick: { label: "Paul Feldwick: Deconstructing the Myths of Advertising", url: "https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths" },
+    kawasaki: { label: "Guy Kawasaki: The Remarkable Rise of Evangelism Marketing", url: "https://marketinghistory.org/p/guy-kawasaki-the-remarkable-rise" },
+    panek:    { label: "Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand", url: "https://marketinghistory.org/p/tracey-panek-levis-corporate-historian" }
+  };
+
+  // Pair an episode with a line on why it's relevant to this particular ad.
+  function ep(key, note) {
+    return { label: EP[key].label, url: EP[key].url, note: note };
+  }
+
+  // ---------------------------------------------------------------
+  // Data model: historic ads, 10 drawn at random per game
   // ---------------------------------------------------------------
   var ADS = [
     {
@@ -841,7 +889,8 @@
       mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cocacola-5cents-1900_edit1.jpg",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Cocacola-5cents-1900_edit1.jpg",
       significance: "Among the first celebrity endorsements in American advertising — establishing the playbook of borrowing fame to build a brand that the industry still runs on.",
-      fact: "Music-hall star Hilda Clark was Coca-Cola's first celebrity endorser. At the time a glass cost five cents at the soda fountain — a price Coke famously held for over 70 years."
+      fact: "Music-hall star Hilda Clark was Coca-Cola's first celebrity endorser. At the time a glass cost five cents at the soda fountain — a price Coke famously held for over 70 years.",
+      listen: [ep("tedlow", "the rise of mass marketing in America, and the Cola Wars it produced")]
     },
     {
       id: 5,
@@ -851,7 +900,8 @@
       mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Unclesamwantyou.jpg",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Unclesamwantyou.jpg",
       significance: "Propaganda as direct-response advertising. The pointing finger and the word “YOU” made the viewer the audience of one — among the most imitated compositions in poster history.",
-      fact: "James Montgomery Flagg used his own face (aged up, with a goatee) as the model for Uncle Sam. Over four million copies were printed during World War I."
+      fact: "James Montgomery Flagg used his own face (aged up, with a goatee) as the model for Uncle Sam. Over four million copies were printed during World War I.",
+      listen: [ep("bernays", "how wartime propaganda became the public relations industry")]
     },
     {
       id: 6,
@@ -861,7 +911,11 @@
       mediaUrl: "https://www.youtube.com/embed/1VM2eLhvsSM",
       sourceUrl: "https://www.youtube.com/watch?v=1VM2eLhvsSM",
       significance: "The high-water mark of advertising idealism — selling a soft drink as world peace. It proved a commercial could jump the fence into pop culture and live there.",
-      fact: "Shot on a hillside in Italy after the original airfield shoot was rained out, the jingle was re-recorded as “I'd Like to Teach the World to Sing” and became a genuine chart hit — twice."
+      fact: "Shot on a hillside in Italy after the original airfield shoot was rained out, the jingle was re-recorded as “I'd Like to Teach the World to Sing” and became a genuine chart hit — twice.",
+      listen: [
+        ep("zyman1", "Coca-Cola's first Chief Marketing Officer on building the brand"),
+        ep("zyman2", "and on New Coke, the decision that tested everything Hilltop stood for")
+      ]
     },
     {
       id: 7,
@@ -872,7 +926,10 @@
       sourceUrl: "https://www.youtube.com/watch?v=VtvjbmoDx-I",
       significance: "The Super Bowl ad as cultural event begins here. A product launch staged as dystopian cinema, it positioned the Mac not as a computer but as a creative tool.",
       fact: "Directed by Ridley Scott fresh off Blade Runner, the Orwell-inspired spot aired nationally just once — and people still talk about it every February.",
-      listen: { label: "Tim Calkins: Why Super Bowl Ads Are Still Worth It", url: "https://marketinghistory.org/p/tim-calkins-super-bowl-ads" }
+      listen: [
+        ep("calkins", "how one spot turned the Super Bowl into advertising's main stage"),
+        ep("tungate", "on the agencies and ideas that shaped the modern industry")
+      ]
     },
     {
       id: 8,
@@ -882,7 +939,8 @@
       mediaUrl: "https://www.youtube.com/embed/0yO7xLAGugQ",
       sourceUrl: "https://www.youtube.com/watch?v=0yO7xLAGugQ",
       significance: "Three words that turned a running-shoe company into a philosophy. The campaign made the brand — not the product — the hero, and modern sports marketing followed.",
-      fact: "The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan partly inspired — grimly — by a convicted murderer's last words."
+      fact: "The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan partly inspired — grimly — by a convicted murderer's last words.",
+      listen: [ep("reames", "Nike's first-ever historian on the secrets behind the Swoosh")]
     },
     {
       id: 9,
@@ -893,7 +951,8 @@
       sourceUrl: "https://www.youtube.com/watch?v=JJmqCKtJnxM",
       titleSafe: true,
       significance: "An early viral phenomenon — proof a catchphrase could carry a brand across talk shows, playgrounds, and the early internet without a single product claim.",
-      fact: "Adapted from Charles Stone III's short film 'True' and starring his real friends, “Whassup?!” won the Cannes Grand Prix and entered everyday speech."
+      fact: "Adapted from Charles Stone III's short film 'True' and starring his real friends, “Whassup?!” won the Cannes Grand Prix and entered everyday speech.",
+      listen: [ep("calkins", "six decades of Super Bowl advertising, and what the money buys")]
     },
     {
       id: 10,
@@ -915,7 +974,7 @@
       sourceUrl: "https://en.wikipedia.org/wiki/File:Think_Small.jpg",
       significance: "Ad Age's #1 campaign of the century. DDB's honest, witty minimalism launched the Creative Revolution and taught advertising to treat readers as intelligent.",
       fact: "Bill Bernbach's great innovation was pairing copywriters with art directors — a partnership that produced this ad's acres of white space and self-deprecating wit.",
-      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+      listen: [ep("tungate", "on Bill Bernbach and the Creative Revolution this ad set off")]
     },
     {
       id: 12,
@@ -925,7 +984,11 @@
       mediaUrl: "https://www.youtube.com/embed/xffOCZYX6F8",
       sourceUrl: "https://www.youtube.com/watch?v=xffOCZYX6F8",
       significance: "The template for emotional sports marketing: a 60-second story with no product claim — just human warmth between a weary hero and a kid with a Coke.",
-      fact: "The shoot took three days and dozens of Cokes. The spot won a Clio, spawned international remakes, and even inspired a TV movie."
+      fact: "The shoot took three days and dozens of Cokes. The spot won a Clio, spawned international remakes, and even inspired a TV movie.",
+      listen: [
+        ep("zyman1", "Coca-Cola's first Chief Marketing Officer on the era that produced this ad"),
+        ep("zyman2", "and on New Coke, the misstep that followed")
+      ]
     },
     {
       id: 13,
@@ -946,7 +1009,7 @@
       sourceUrl: "https://www.youtube.com/watch?v=mKa_uQCz3Hw",
       significance: "British advertising's pop-culture breakthrough: BBH sold jeans as cinema, lifted 501 sales roughly 800%, and sent its sixties soundtrack back up the charts.",
       fact: "Nick Kamen stripping to his boxers to Marvin Gaye's “I Heard It Through the Grapevine” also triggered a national run on boxer shorts.",
-      listen: { label: "Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand", url: "https://marketinghistory.org/p/tracey-panek-levis-corporate-historian" }
+      listen: [ep("panek", "Levi's own historian on how the brand built its mythology")]
     },
     {
       id: 15,
@@ -957,7 +1020,7 @@
       sourceUrl: "https://www.youtube.com/watch?v=GkAnLtqWDhc",
       significance: "The modern global platform: one insight — hunger changes you — translated into more than 80 markets from a single Super Bowl debut.",
       fact: "The Betty White spot launched the campaign. Fans then petitioned for White to host SNL, which she did months later at age 88.",
-      listen: { label: "Tim Calkins: Why Super Bowl Ads Are Still Worth It", url: "https://marketinghistory.org/p/tim-calkins-super-bowl-ads" }
+      listen: [ep("calkins", "the strategy and economics behind the Super Bowl spot")]
     },
     {
       id: 16,
@@ -968,7 +1031,8 @@
       sourceUrl: "https://www.youtube.com/watch?v=5sMBhDv4sik",
       titleSafe: true,
       significance: "Apple's comeback manifesto. Aired weeks after Steve Jobs returned, it rebuilt the brand as a creative tool for rebels — the positioning Apple trades on to this day.",
-      fact: "Richard Dreyfuss narrated the broadcast version, but a cut voiced by Jobs himself exists — he decided at the last minute it shouldn't be about him."
+      fact: "Richard Dreyfuss narrated the broadcast version, but a cut voiced by Jobs himself exists — he decided at the last minute it shouldn't be about him.",
+      listen: [ep("kawasaki", "Apple's former chief evangelist on building the faithful")]
     },
     {
       id: 17,
@@ -989,7 +1053,8 @@
       mediaUrl: "https://www.youtube.com/embed/0Gkqzxss8Ss",
       sourceUrl: "https://www.youtube.com/watch?v=0Gkqzxss8Ss",
       significance: "The deprivation strategy in one spot: sell the product by imagining its absence. It launched one of America's longest-running campaigns.",
-      fact: "A young Michael Bay directed it for Goodby Silverstein: a peanut-butter-mouthed history buff who can't say “Aaron Burr” loses a $10,000 radio quiz."
+      fact: "A young Michael Bay directed it for Goodby Silverstein: a peanut-butter-mouthed history buff who can't say “Aaron Burr” loses a $10,000 radio quiz.",
+      listen: [ep("feldwick", "on advertising's real power to mint catchphrases and build fame")]
     },
     {
       id: 19,
@@ -1000,18 +1065,20 @@
       sourceUrl: "https://www.youtube.com/watch?v=48jlm6QSU4k",
       titleSafe: true,
       significance: "Positioning as sitcom: 66 spots that personified two computers and made the competitor the punchline without citing a single spec.",
-      fact: "Justin Long played Mac, John Hodgman played PC. Adweek later named it the best campaign of the decade."
+      fact: "Justin Long played Mac, John Hodgman played PC. Adweek later named it the best campaign of the decade.",
+      listen: [ep("kawasaki", "Apple's former chief evangelist on turning customers into believers")]
     },
     {
       id: 20,
-      title: "Google Chrome — “Dear Sophie”",
-      year: 2011,
+      title: "Google — “Parisian Love”",
+      year: 2010,
       mediaType: "video",
-      mediaUrl: "https://www.youtube.com/embed/Btp0Yr7wdzI",
-      sourceUrl: "https://www.youtube.com/watch?v=Btp0Yr7wdzI",
+      mediaUrl: "https://www.youtube.com/embed/nnsSUqgkDwU",
+      sourceUrl: "https://www.youtube.com/watch?v=nnsSUqgkDwU",
       titleSafe: true,
-      significance: "Google turned a browser into a tearjerker — a father emailing his growing daughter — proving utility products could own emotional storytelling.",
-      fact: "Part of “The Web Is What You Make of It” campaign, it compressed an entire childhood into two minutes of inbox entries."
+      significance: "Google's first Super Bowl ad, and proof that a product demo could be a love story. The entire romance plays out in nothing but a search box.",
+      fact: "No faces, no voices, no music swell until the end — just queries typed one after another. Google had reportedly resisted TV advertising for years before running it.",
+      listen: [ep("calkins", "how the Super Bowl became the stage even Google couldn't resist")]
     },
     {
       id: 21,
@@ -1053,7 +1120,8 @@
       mediaUrl: "https://www.youtube.com/embed/rE1lIdtDs2g",
       sourceUrl: "https://www.youtube.com/watch?v=rE1lIdtDs2g",
       significance: "“Good things come to those who wait” turned a slow pour into mythology — white horses in the surf, routinely voted the best British ad ever made.",
-      fact: "AMV BBDO's voiceover channels Moby-Dick's Ahab; real big-wave surfers were blended with CGI horses over a drum-and-bass track."
+      fact: "AMV BBDO's voiceover channels Moby-Dick's Ahab; real big-wave surfers were blended with CGI horses over a drum-and-bass track.",
+      listen: [ep("gluckman", "the man who invented Baileys on how drinks brands are really built")]
     },
     {
       id: 25,
@@ -1118,7 +1186,11 @@
       sourceUrl: "https://www.youtube.com/watch?v=DCNEIwxkPlc",
       titleSafe: true,
       significance: "The film that launched the purpose era: a time-lapse from model to billboard exposed manufactured beauty and made media literacy a brand platform.",
-      fact: "Made by Ogilvy Toronto on a shoestring, it earned an estimated 500 times its budget in free media and won two Grand Prix at Cannes."
+      fact: "Made by Ogilvy Toronto on a shoestring, it earned an estimated 500 times its budget in free media and won two Grand Prix at Cannes.",
+      listen: [
+        ep("aaker", "why Real Beauty is a case study in revitalizing a brand"),
+        ep("asbury", "the counterargument: how purpose made every brand sound the same")
+      ]
     },
     {
       id: 31,
@@ -1128,7 +1200,8 @@
       mediaUrl: "https://www.youtube.com/embed/vZu0y-D6BMs",
       sourceUrl: "https://www.youtube.com/watch?v=vZu0y-D6BMs",
       significance: "Saatchi & Saatchi's spectacle for “the world's favourite airline”: flying Manhattan island across the Atlantic, with Hollywood effects no airline ad had attempted.",
-      fact: "The premise: BA flies more people across the Atlantic every year than the entire population of Manhattan."
+      fact: "The premise: BA flies more people across the Atlantic every year than the entire population of Manhattan.",
+      listen: [ep("tungate", "on Saatchi & Saatchi and how this ad got made")]
     },
     {
       id: 32,
@@ -1148,8 +1221,8 @@
       mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Lucky_strike_it%27s_toasted.jpg",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Lucky_strike_it%27s_toasted.jpg",
       significance: "The “reason why” school in three words: every maker toasted its tobacco, but Lucky Strike claimed the process first — a move marketers still copy.",
-      fact: "The slogan from Albert Lasker's golden era still appears on the pack more than a century after it was written.",
-      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+      fact: "Mad Men opens with Don Draper dreaming up “It's toasted” in 1960 — a great scene, and four decades late. Lucky Strike had been running the line since the First World War.",
+      listen: [ep("bernays", "how Bernays sold cigarettes to women as “torches of freedom”")]
     },
     {
       id: 34,
@@ -1160,7 +1233,7 @@
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Clark_Stanley%27s_Snake_Oil_Liniment.png",
       significance: "The ad that named a whole genre of deception. Patent-medicine hype like Stanley's is why “snake oil salesman” means what it means — and why ad regulation exists.",
       fact: "Federal chemists eventually found the liniment contained no snake oil at all. Stanley was fined $20, and truth-in-advertising law followed the era's abuses.",
-      listen: { label: "Mark Tungate: Advertising History from Ancient Pompeii to Today", url: "https://marketinghistory.org/p/mark-tungate-advertising-history" }
+      listen: [ep("tungate", "on the patent-medicine era that gave advertising its bad name")]
     },
     {
       id: 35,
@@ -1171,7 +1244,8 @@
       sourceUrl: "https://commons.wikimedia.org/wiki/File:I_Love_New_York.svg",
       lightBg: true,
       significance: "Place branding's masterpiece: Milton Glaser's logo, made for a bankrupt, crime-ridden city, became the most imitated tourism mark on earth.",
-      fact: "Glaser sketched the concept on scrap paper in a taxi — the sketch is now in MoMA — and did the work pro bono, expecting it to run a few months."
+      fact: "Glaser sketched the concept on scrap paper in a taxi — the sketch is now in MoMA — and did the work pro bono, expecting it to run a few months.",
+      listen: [ep("tungate", "on Mary Wells Lawrence and the New York agency scene behind the campaign")]
     }
   ];
 
@@ -1308,7 +1382,8 @@
     fact: $("fact"),
     mediaKind: $("media-kind"),
     mediaSource: $("media-source"),
-    listenLink: $("listen-link"),
+    listenBlock: $("listen-block"),
+    listenItems: $("listen-items"),
     btnNext: $("btn-next"),
     finalScore: $("final-score"),
     badgeMedal: $("badge-medal"),
@@ -1455,13 +1530,27 @@
         : "");
     els.significance.textContent = ad.significance;
     els.fact.innerHTML = "<b>Did you know?</b> " + ad.fact;
-    if (ad.listen) {
-      els.listenLink.style.display = "";
-      els.listenLink.href = ad.listen.url;
-      els.listenLink.innerHTML = "<b>Related listening:</b> " + ad.listen.label + " ↗";
-    } else {
-      els.listenLink.style.display = "none";
-    }
+    // `listen` is an array of episodes; older single-object entries still work.
+    var episodes = ad.listen ? [].concat(ad.listen) : [];
+    els.listenItems.innerHTML = "";
+    els.listenBlock.style.display = episodes.length ? "" : "none";
+    episodes.forEach(function (ep) {
+      var row = document.createElement("div");
+      row.className = "listen-item";
+      var a = document.createElement("a");
+      a.href = ep.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = ep.label + " ↗";
+      row.appendChild(a);
+      if (ep.note) {
+        var n = document.createElement("span");
+        n.className = "note";
+        n.textContent = ep.note;
+        row.appendChild(n);
+      }
+      els.listenItems.appendChild(row);
+    });
 
     els.btnNext.textContent = (state.round + 1 === TOTAL_ROUNDS) ? "See Final Score →" : "Next Round →";
     els.feedback.classList.add("show");

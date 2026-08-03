@@ -46,9 +46,13 @@ Ads live in the `ADS` array near the top of the script. Each entry:
   fact,            // trivia shown after the guess
   titleSafe: true, // optional: YouTube title doesn't reveal the year
   lightBg: true,   // optional: artwork is transparent, needs a white frame
-  listen: { label, url }  // optional: related podcast episode
+  listen: [ep("zyman1", "why this episode is relevant here")]  // optional, any number
 }
 ```
+
+Episodes live in the `EP` map above the ads, keyed by guest (`tungate`, `calkins`,
+`bernays`…), so a URL or title is written once and reused. `ep(key, note)` pairs one
+with a line explaining its relevance to that specific ad.
 
 Two flags worth knowing. `titleSafe` controls the strip that covers the YouTube title bar — omit it and the game hides the title, since many uploads have the year right in them. `lightBg` puts white behind transparent artwork; without it, dark linework disappears into the dark frame.
 
