@@ -29,10 +29,15 @@ After each guess the game reveals the year, why the ad matters, a piece of trivi
 Everything is one file. No build step, no dependencies, no framework.
 
 ```
-index.html     the whole game — markup, styles, data, logic
-og-image.png   1200×630 social preview card
-CNAME          custom domain for GitHub Pages
+index.html            the whole game — markup, styles, data, logic
+og-image.png          1200×630 social preview card
+CNAME                 custom domain for GitHub Pages
+CONTENT.md            every ad, note, link, and quote (generated)
+build-content-doc.js  regenerates CONTENT.md from index.html
 ```
+
+`CONTENT.md` is generated — edit copy in `index.html`, then run
+`node build-content-doc.js` to refresh it.
 
 Ads live in the `ADS` array near the top of the script. Each entry:
 
