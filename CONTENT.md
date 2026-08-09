@@ -5,7 +5,7 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**35 ads** in the pool · **22** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
+**36 ads** in the pool · **23** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
 
 Span: 1886–2013. Ten are drawn at random per playthrough.
 
@@ -281,6 +281,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 - [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian)
   <br>Nike's first-ever historian on the secrets behind the Swoosh
 
+### 1991–1997 — Barclaycard — Rowan Atkinson
+
+*Video · Campaign span · Title shown*
+
+**Why it matters.** A rare case of a brand selling itself through its own uselessness in the wrong hands. Atkinson's bungling agent got the card's benefits wrong for six years, and viewers learned them anyway.
+
+**Did you know?** Atkinson's hapless spy Richard Latham was the prototype for Johnny English, who a decade later graduated into his own film trilogy.
+
+**Source.** [YouTube](https://www.youtube.com/watch?v=RylTP_5fG0s)
+
+**Hear more on A History of Marketing.**
+
+- [Paul Feldwick: “The only honest case study in the history of marketing”](https://marketinghistory.org/p/paul-feldwick-barclaycard-case-study)
+  <br>Paul Feldwick on why this is “the only honest case study in the history of marketing”
+
 ### 1993 — Got Milk? — “Aaron Burr”
 
 *Video · Title hidden*
@@ -500,6 +515,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Marlboro — The Marlboro Man (1955) |
 | [Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand](https://marketinghistory.org/p/tracey-panek-levis-corporate-historian) | Levi's — “Laundrette” (1985) |
 | [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian) | Nike — “Just Do It” (first commercial) (1988) |
+| [Paul Feldwick: “The only honest case study in the history of marketing”](https://marketinghistory.org/p/paul-feldwick-barclaycard-case-study) | Barclaycard — Rowan Atkinson (1991) |
 | [Paul Feldwick: Deconstructing the Myths of Advertising](https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths) | Got Milk? — “Aaron Burr” (1993) |
 | [David Gluckman: Why the Inventor of Baileys Thinks Market Research is Bullsh*t](https://marketinghistory.org/p/david-gluckman-inventor-of-baileys) | Guinness — “Surfer” (1999) |
 | [David Aaker: “The Father of Modern Branding” Returns](https://marketinghistory.org/p/david-aaker-the-father-of-branding-returns) | Dove — “Evolution” (2006) |
@@ -549,15 +565,27 @@ One is chosen at random on load and again at the start of each new game.
 
 ## Scoring
 
-| Guess is off by | Modern (1926–present) | Vintage (pre-1926) |
+| Points | Modern (1926–present) | Vintage (pre-1926) |
 | --- | --- | --- |
-| Exact | 10 | 10 |
-| 1 year | 8 | 8 (within 3) |
-| 2–5 years | 5 | 5 (within 7) |
-| 6–10 years | 3 | 3 (within 20) |
-| More | 0 | 0 |
+| 10 | exact | exact |
+| 9 | 1 year off | 1–2 years off |
+| 8 | 2 years off | 3–4 years off |
+| 7 | 3 years off | 5–6 years off |
+| 6 | 4 years off | 7–8 years off |
+| 5 | 5 years off | 9–10 years off |
+| 3 | 6–9 years off | 11–13 years off |
+| 2 | 10–12 years off | 14–16 years off |
+| 1 | 13–15 years off | 17–20 years off |
+| 0 | more than 15 | more than 20 |
 
 The vintage cutoff is computed as `currentYear - 100`, so it moves with time.
+
+### Campaign ads
+
+A few ads ran as campaigns rather than debuting once, so any year inside the span scores
+the full 10, with a steeper drop-off outside it: 1 year out = 8, 2–3 = 6, 4–5 = 2, beyond = 0.
+
+- **Barclaycard — Rowan Atkinson** — 1991–1997
 
 ---
 
@@ -575,7 +603,8 @@ The vintage cutoff is computed as `currentYear - 100`, so it moves with time.
 | Submit button | Rotates: Lock It In · That's My Guess · Final Answer · Ship It |
 | Video guard | Title hidden |
 | Media caption | Television commercial / Print advertisement · Source: … |
-| Vintage popover | This ad is over a century old, so it scores on a gentler curve: exact year = 10 pts, within 3 years = 8, within 7 = 5, within 20 = 3. Newer ads use tighter margins. |
+| Vintage popover | This ad is over a century old, so it scores on a gentler curve: exact = 10, within 2 years = 9, 4 = 8, 6 = 7, 8 = 6, 10 = 5, 13 = 3, 16 = 2, 20 = 1. Newer ads use tighter margins. |
+| Campaign popover | This campaign ran for years rather than debuting once, so any year in the span scores the full 10. From there: 1 year out = 8, 2–3 = 6, 4–5 = 2. |
 | Next button | Next Round → / See Final Score → |
 | End screen | Share Your Score · Play Again · Share on X · Facebook · LinkedIn · Download scorecard |
 | Footer | Media links to Wikimedia or YouTube source pages · From marketinghistory.org |

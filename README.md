@@ -12,15 +12,23 @@ Each round shows one ad and asks for its year. Guess by typing a year or by pick
 
 Scoring rewards precision, on a curve that widens for older work:
 
-| | Modern (1926–present) | Vintage (pre-1926) |
+| Points | Modern (1926–present) | Vintage (pre-1926) |
 | --- | --- | --- |
-| Exact | 10 | 10 |
-| 1 year off | 8 | 8 (within 3) |
-| 2–5 years off | 5 | 5 (within 7) |
-| 6–10 years off | 3 | 3 (within 20) |
-| Beyond that | 0 | 0 |
+| 10 | exact | exact |
+| 9 | 1 year off | 1–2 years off |
+| 8 | 2 years off | 3–4 years off |
+| 7 | 3 years off | 5–6 years off |
+| 6 | 4 years off | 7–8 years off |
+| 5 | 5 years off | 9–10 years off |
+| 3 | 6–9 years off | 11–13 years off |
+| 2 | 10–12 years off | 14–16 years off |
+| 1 | 13–15 years off | 17–20 years off |
+| 0 | more than 15 | more than 20 |
 
 The vintage window is computed as `currentYear - 100`, so it stays correct as time passes.
+
+Ads carrying a `yearRange` ran as campaigns rather than debuting once. Any year inside the
+span scores 10, then 8 one year out, 6 at two to three, 2 at four to five, 0 beyond.
 
 After each guess the game reveals the year, why the ad matters, a piece of trivia, and a link to the media's source page. Some ads link to the relevant [A History of Marketing](https://marketinghistory.org) episode.
 

@@ -630,7 +630,18 @@
     font-weight: 600;
     font-variant-numeric: tabular-nums;
   }
-  .breakdown-row .t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .breakdown-row .t {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+  }
+  .breakdown-row a.t:hover { border-bottom-color: var(--ink); }
   .breakdown-row .yrs { color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
   .breakdown-row .pts {
     flex: 0 0 52px;
@@ -638,10 +649,10 @@
     font-weight: 700;
     font-variant-numeric: tabular-nums;
   }
-  .pts.p10 { color: var(--ink); }
-  .pts.p8, .pts.p5 { color: #444; }
-  .pts.p3 { color: #777; }
-  .pts.p0 { color: #aaa; }
+  .pts.pts-high { color: var(--ink); }
+  .pts.pts-mid  { color: #444; }
+  .pts.pts-low  { color: #888; }
+  .pts.pts-zero { color: #bbb; }
 
   .end-actions {
     display: flex;
@@ -838,6 +849,7 @@
     zyman1:   { label: "Sergio Zyman, Part 1: “The First Chief Marketing Officer”", url: "https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer" },
     zyman2:   { label: "Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”", url: "https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing" },
     feldwick: { label: "Paul Feldwick: Deconstructing the Myths of Advertising", url: "https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths" },
+    barclaycard:{ label: "Paul Feldwick: “The only honest case study in the history of marketing”", url: "https://marketinghistory.org/p/paul-feldwick-barclaycard-case-study" },
     kawasaki: { label: "Guy Kawasaki: The Remarkable Rise of Evangelism Marketing", url: "https://marketinghistory.org/p/guy-kawasaki-the-remarkable-rise" },
     kilbourne:{ label: "Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism", url: "https://marketinghistory.org/p/jean-kilbourne-killing-us-softly" },
     eckhardt: { label: "Giana Eckhardt: The Origins of Branding in Imperial China", url: "https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china" },
@@ -1250,6 +1262,19 @@
       significance: "Place branding's masterpiece: Milton Glaser's logo, made for a bankrupt, crime-ridden city, became the most imitated tourism mark on earth.",
       fact: "Glaser sketched the concept on scrap paper in a taxi — the sketch is now in MoMA — and did the work pro bono, expecting it to run a few months.",
       listen: [ep("tungate", "on Mary Wells Lawrence and the New York agency scene behind the campaign")]
+    },
+    {
+      id: 36,
+      title: "Barclaycard — Rowan Atkinson",
+      year: 1991,
+      yearRange: [1991, 1997],
+      mediaType: "video",
+      mediaUrl: "https://www.youtube-nocookie.com/embed/RylTP_5fG0s",
+      sourceUrl: "https://www.youtube.com/watch?v=RylTP_5fG0s",
+      titleSafe: true,
+      significance: "A rare case of a brand selling itself through its own uselessness in the wrong hands. Atkinson's bungling agent got the card's benefits wrong for six years, and viewers learned them anyway.",
+      fact: "Atkinson's hapless spy Richard Latham was the prototype for Johnny English, who a decade later graduated into his own film trilogy.",
+      listen: [ep("barclaycard", "Paul Feldwick on why this is “the only honest case study in the history of marketing”")]
     }
   ];
 
@@ -1258,21 +1283,53 @@
   // ---------------------------------------------------------------
   function isVintage(year) { return year < VINTAGE_CUTOFF; }
 
-  function scoreGuess(actualYear, guess) {
-    var diff = Math.abs(actualYear - guess);
-    if (isVintage(actualYear)) {
-      if (diff === 0) return 10;
-      if (diff <= 3)  return 8;
-      if (diff <= 7)  return 5;
-      if (diff <= 20) return 3;
-      return 0;
-    } else {
-      if (diff === 0)  return 10;
-      if (diff === 1)  return 8;
-      if (diff <= 5)   return 5;
-      if (diff <= 10)  return 3;
+  // How far a guess falls outside the answer. Campaign ads answer to a span of
+  // years, so anything inside the span is nil distance.
+  function yearsOff(ad, guess) {
+    if (ad.yearRange) {
+      if (guess < ad.yearRange[0]) return ad.yearRange[0] - guess;
+      if (guess > ad.yearRange[1]) return guess - ad.yearRange[1];
       return 0;
     }
+    return Math.abs(ad.year - guess);
+  }
+
+  function scoreGuess(ad, guess) {
+    var diff = yearsOff(ad, guess);
+
+    // Campaigns that ran for years: a wide bullseye, then a steep drop-off.
+    if (ad.yearRange) {
+      if (diff === 0) return 10;
+      if (diff === 1) return 8;
+      if (diff <= 3)  return 6;
+      if (diff <= 5)  return 2;
+      return 0;
+    }
+
+    if (isVintage(ad.year)) {
+      if (diff === 0)  return 10;
+      if (diff <= 2)   return 9;
+      if (diff <= 4)   return 8;
+      if (diff <= 6)   return 7;
+      if (diff <= 8)   return 6;
+      if (diff <= 10)  return 5;
+      if (diff <= 13)  return 3;
+      if (diff <= 16)  return 2;
+      if (diff <= 20)  return 1;
+      return 0;
+    }
+
+    if (diff === 0)  return 10;
+    if (diff <= 5)   return 10 - diff;
+    if (diff <= 9)   return 3;
+    if (diff <= 12)  return 2;
+    if (diff <= 15)  return 1;
+    return 0;
+  }
+
+  // What the answer reads as: a single year, or the span a campaign ran.
+  function answerYears(ad) {
+    return ad.yearRange ? ad.yearRange[0] + "–" + ad.yearRange[1] : String(ad.year);
   }
 
   // Rotating footer epigraphs. One is picked at load and again each new game.
@@ -1351,21 +1408,31 @@
     return hand;
   }
 
-  // Build 1 correct year + 3 plausible distractors, tailored to the era
+  // Build 1 correct year + 3 plausible distractors, tailored to the era.
+  // For campaign ads the distractors must sit outside the span, or two buttons
+  // would score full marks while only one reads as correct.
   function buildChoices(ad) {
     var offsets = isVintage(ad.year)
       ? [2, 3, 4, 5, 6, 8, 10, 12, 15, 18]
       : [1, 2, 3, 4, 5, 6, 7, 8, 10, 12];
+    var lo = ad.yearRange ? ad.yearRange[0] : ad.year;
+    var hi = ad.yearRange ? ad.yearRange[1] : ad.year;
+    // Show a year from anywhere in the span so the answer isn't always the
+    // campaign's first year.
+    var answer = ad.yearRange
+      ? lo + Math.floor(Math.random() * (hi - lo + 1))
+      : ad.year;
     var years = {};
-    years[ad.year] = true;
-    var list = [ad.year];
+    years[answer] = true;
+    var list = [answer];
     var guard = 0;
-    while (list.length < 4 && guard < 200) {
+    while (list.length < 4 && guard < 300) {
       guard++;
       var off = offsets[Math.floor(Math.random() * offsets.length)];
-      var candidate = ad.year + (Math.random() < 0.5 ? -off : off);
-      if (candidate > CURRENT_YEAR) candidate = ad.year - off;
+      var candidate = (Math.random() < 0.5 ? lo - off : hi + off);
+      if (candidate > CURRENT_YEAR) candidate = lo - off;
       if (candidate < 1700 || years[candidate]) continue;
+      if (ad.yearRange && candidate >= lo && candidate <= hi) continue;
       years[candidate] = true;
       list.push(candidate);
     }
@@ -1518,17 +1585,18 @@
     state.answered = true;
 
     var ad = state.order[state.round];
-    var points = scoreGuess(ad.year, guess);
-    var diff = Math.abs(ad.year - guess);
+    var points = scoreGuess(ad, guess);
+    var diff = yearsOff(ad, guess);
     state.score += points;
     state.results.push({ ad: ad, guess: guess, points: points });
 
-    // Freeze choice buttons and color them
+    // Freeze choice buttons and color them. Marking by score rather than by
+    // exact year keeps campaign spans correct.
     var choiceButtons = els.choices.querySelectorAll(".choice");
     for (var i = 0; i < choiceButtons.length; i++) {
       choiceButtons[i].disabled = true;
       var y = parseInt(choiceButtons[i].textContent, 10);
-      if (y === ad.year) choiceButtons[i].classList.add("correct");
+      if (scoreGuess(ad, y) === 10) choiceButtons[i].classList.add("correct");
       else if (choiceButtons[i] === choiceBtn) choiceButtons[i].classList.add("wrong-pick");
     }
     els.btnSubmit.disabled = true;
@@ -1539,14 +1607,25 @@
     els.pointsChip.className = "points-chip " + chipClass;
     els.pointsChip.textContent = "+" + points + " pts";
     els.verdictDetail.textContent =
-      diff === 0 ? "Bullseye — exact year!" :
-      "Off by " + diff + " year" + (diff === 1 ? "" : "s") +
-      (points === 0 ? " — tough one!" : "");
+      diff === 0
+        ? (ad.yearRange ? "Bullseye — inside the campaign's run!" : "Bullseye — exact year!")
+        : "Off by " + diff + " year" + (diff === 1 ? "" : "s") +
+          (points === 0 ? " — tough one!" : "");
+
+    var note = "";
+    if (ad.yearRange) {
+      note = ' <span class="qmark" role="button" tabindex="0" aria-label="About campaign scoring">?' +
+        '<span class="pop">This campaign ran for years rather than debuting once, so any year in the span scores the full 10. ' +
+        'From there: 1 year out = 8, 2–3 = 6, 4–5 = 2.</span></span>';
+    } else if (isVintage(ad.year)) {
+      note = ' <span class="qmark" role="button" tabindex="0" aria-label="About vintage scoring">?' +
+        '<span class="pop">This ad is over a century old, so it scores on a gentler curve: exact = 10, ' +
+        'within 2 years = 9, 4 = 8, 6 = 7, 8 = 6, 10 = 5, 13 = 3, 16 = 2, 20 = 1. Newer ads use tighter margins.</span></span>';
+    }
     els.revealYear.innerHTML =
-      "You guessed <b>" + guess + "</b> &nbsp;·&nbsp; Correct year: <b>" + ad.year + "</b>" +
-      (isVintage(ad.year)
-        ? ' <span class="qmark" role="button" tabindex="0" aria-label="About vintage scoring">?<span class="pop">This ad is over a century old, so it scores on a gentler curve: exact year = 10 pts, within 3 years = 8, within 7 = 5, within 20 = 3. Newer ads use tighter margins.</span></span>'
-        : "");
+      "You guessed <b>" + guess + "</b> &nbsp;·&nbsp; " +
+      (ad.yearRange ? "Campaign ran: " : "Correct year: ") +
+      "<b>" + answerYears(ad) + "</b>" + note;
     els.significance.textContent = ad.significance;
     els.fact.innerHTML = "<b>Did you know?</b> " + ad.fact;
     // `listen` is an array of episodes; older single-object entries still work.
@@ -1640,7 +1719,7 @@
       x.fillText(t, 180, y);
       x.textAlign = "right";
       x.fillStyle = "#666666";
-      x.fillText(r.guess + " → " + r.ad.year, W - 240, y);
+      x.fillText(r.guess + " → " + answerYears(r.ad), W - 240, y);
       x.fillStyle = r.points >= 8 ? "#111111" : (r.points >= 3 ? "#555555" : "#aaaaaa");
       x.font = "700 26px 'IBM Plex Sans', sans-serif";
       x.fillText("+" + r.points, W - 120, y);
@@ -1674,11 +1753,33 @@
     state.results.forEach(function (r, i) {
       var row = document.createElement("div");
       row.className = "breakdown-row";
-      row.innerHTML =
-        '<span class="num">' + (i + 1) + '</span>' +
-        '<span class="t">' + r.ad.title + '</span>' +
-        '<span class="yrs">' + r.guess + ' → ' + r.ad.year + '</span>' +
-        '<span class="pts p' + r.points + '">+' + r.points + '</span>';
+      var tier = r.points >= 8 ? "high" : (r.points >= 5 ? "mid" : (r.points >= 1 ? "low" : "zero"));
+
+      var num = document.createElement("span");
+      num.className = "num";
+      num.textContent = i + 1;
+
+      // Title links back to the ad so people can rewatch it.
+      var link = document.createElement("a");
+      link.className = "t";
+      link.href = r.ad.sourceUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = r.ad.title;
+      link.title = "Open “" + r.ad.title + "” in a new tab";
+
+      var yrs = document.createElement("span");
+      yrs.className = "yrs";
+      yrs.textContent = r.guess + " → " + answerYears(r.ad);
+
+      var pts = document.createElement("span");
+      pts.className = "pts pts-" + tier;
+      pts.textContent = "+" + r.points;
+
+      row.appendChild(num);
+      row.appendChild(link);
+      row.appendChild(yrs);
+      row.appendChild(pts);
       els.breakdownRows.appendChild(row);
     });
     showScreen("results");
