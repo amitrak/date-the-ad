@@ -5,7 +5,7 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**36 ads** in the pool · **23** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
+**37 ads** in the pool · **24** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
 
 Span: 1886–2013. Ten are drawn at random per playthrough.
 
@@ -159,6 +159,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 **Did you know?** The Xerox 914 became so dominant that “to xerox” entered the language as a verb — a trademark lawyer's nightmare, a marketer's dream.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=hkEykPawTrg)
+
+### 1965 — Levy's Rye Bread — “You Don't Have to Be Jewish”
+
+*Image*
+
+**Why it matters.** Bernbach's DDB took a product coded as ethnic and made it everyone's, using warmth and a joke instead of an argument. The casting was strikingly broad for mainstream American advertising of the era.
+
+**Did you know?** The posters ran on New York subway platforms and were stolen off the walls often enough that Levy's had to keep reprinting them.
+
+**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Levy%27s_real_Jewish_Rye.jpg)
+
+**Hear more on A History of Marketing.**
+
+- [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
+  <br>on Bill Bernbach and the DDB era that produced this
 
 ### 1971 — Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke)
 
@@ -504,7 +519,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 | Episode | Ads that link to it |
 | --- | --- |
-| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
+| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
