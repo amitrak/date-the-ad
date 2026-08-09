@@ -141,14 +141,14 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Ogilvy's argument that facts sell better than adjectives. Nine hundred words of specifics, headed by a detail so precise it did the persuading on its own.
 
-**Did you know?** Ogilvy wrote 26 headlines and had half a dozen colleagues pick the winner. The line wasn't even his: he lifted it from a road test in The Motor.
+**Did you know?** Rolls-Royce's engineers hated it. They had spent years on the drivetrain and the suspension, and Ogilvy passed over all of it to write about a clock. The line wasn't even his: he took it from a road test in The Motor.
 
 **Source.** [Original](#rights)
 
 **Hear more on A History of Marketing.**
 
-- [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
-  <br>on Ogilvy's research-first school and its rivalry with Bernbach's
+- [Rory Sutherland: Capital ‘M’ vs. small ‘m’ Marketing & the Big Mistake the Industry Made](https://marketinghistory.org/p/rory-sutherland-marketings-big-mistake)
+  <br>Ogilvy's own Rory Sutherland on why the engineers resented the ad that sold the car
 
 ### 1959 — Volkswagen — “Think Small”
 
@@ -569,7 +569,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 | Episode | Ads that link to it |
 | --- | --- |
-| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Rolls-Royce — “At 60 miles an hour…” (1958); Volkswagen — “Think Small” (1959); Avis — “We Try Harder” (1963); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
+| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); Avis — “We Try Harder” (1963); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
@@ -578,6 +578,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Michelin — “Nunc est Bibendum” (1898) |
 | [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900) |
 | [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Marlboro — The Marlboro Man (1955) |
+| [Rory Sutherland: Capital ‘M’ vs. small ‘m’ Marketing & the Big Mistake the Industry Made](https://marketinghistory.org/p/rory-sutherland-marketings-big-mistake) | Rolls-Royce — “At 60 miles an hour…” (1958) |
 | [Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand](https://marketinghistory.org/p/tracey-panek-levis-corporate-historian) | Levi's — “Laundrette” (1985) |
 | [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian) | Nike — “Just Do It” (first commercial) (1988) |
 | [Paul Feldwick: “The only honest case study in the history of marketing”](https://marketinghistory.org/p/paul-feldwick-barclaycard-case-study) | Barclaycard — Rowan Atkinson (1991) |
