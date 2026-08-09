@@ -474,7 +474,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** The $4,500 video that helped topple a giant: direct-to-consumer swagger with the founder as star and a punchline every five seconds.
 
-**Did you know?** Michael Dubin wrote and starred; the site crashed within an hour of launch. Unilever later bought the company for a reported $1 billion.
+**Did you know?** Unilever later bought the company for a reported $1 billion.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=ZUG9qYTJMsI)
 
