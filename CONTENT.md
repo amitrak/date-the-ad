@@ -5,7 +5,7 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**37 ads** in the pool · **24** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
+**41 ads** in the pool · **28** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
 
 Span: 1886–2013. Ten are drawn at random per playthrough.
 
@@ -135,6 +135,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 - [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly)
   <br>the critic who spent a career taking aim at how tobacco advertised
 
+### 1958 — Rolls-Royce — “At 60 miles an hour…”
+
+*Image*
+
+**Why it matters.** Ogilvy's argument that facts sell better than adjectives. Nine hundred words of specifics, headed by a detail so precise it did the persuading on its own.
+
+**Did you know?** Ogilvy wrote 26 headlines and had half a dozen colleagues pick the winner. The line wasn't even his: he lifted it from a road test in The Motor.
+
+**Source.** [Original](#rights)
+
+**Hear more on A History of Marketing.**
+
+- [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
+  <br>on Ogilvy's research-first school and its rivalry with Bernbach's
+
 ### 1959 — Volkswagen — “Think Small”
 
 *Image*
@@ -159,6 +174,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 **Did you know?** The Xerox 914 became so dominant that “to xerox” entered the language as a verb — a trademark lawyer's nightmare, a marketer's dream.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=hkEykPawTrg)
+
+### 1963 — Avis — “We Try Harder”
+
+*Image*
+
+**Why it matters.** The ad that made a weakness into the whole pitch. Admitting second place was so far outside the rules of the era that it reset what a brand was allowed to say about itself.
+
+**Did you know?** DDB's Paula Green wrote the “When you're only No. 2” line. Avis went from losing $3.2m to earning $1.2m within a year, its first profit in over a decade.
+
+**Source.** [Original](#rights)
+
+**Hear more on A History of Marketing.**
+
+- [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
+  <br>on Bernbach's DDB and the Creative Revolution
 
 ### 1965 — Levy's Rye Bread — “You Don't Have to Be Jewish”
 
@@ -191,6 +221,16 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
   <br>Coca-Cola's first Chief Marketing Officer on building the brand
 - [Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”](https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing)
   <br>and on New Coke, the decision that tested everything Hilltop stood for
+
+### 1975 — Omega Speedmaster — “How can a man in a $27,000 suit settle for a $235 watch?”
+
+*Image*
+
+**Why it matters.** The $27,000 suit is a spacesuit. Omega let the moon landings do the arguing, turning a NASA procurement decision into the most durable luxury endorsement in watchmaking.
+
+**Did you know?** The Speedmaster passed NASA's qualification tests in 1965 and went to the moon on Apollo 11, which is why it is still sold as the Moonwatch.
+
+**Source.** [Original](#rights)
 
 ### 1977 — New York State — “I ❤ NY”
 
@@ -238,6 +278,16 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 - [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
   <br>on Saatchi & Saatchi and how this ad got made
+
+### 1983 — Porsche — “Nobody's Perfect”
+
+*Image*
+
+**Why it matters.** A results table used as a boast. Porsche listed the Le Mans top ten, having taken first through eighth and tenth, and let the single gap supply the headline.
+
+**Did you know?** The one place Porsche missed was ninth, taken by a Sauber-BMW. The winning 956 was driven by Vern Schuppan, Hurley Haywood and Al Holbert.
+
+**Source.** [Original](#rights)
 
 ### 1984 — Apple — “Big Brother” Macintosh launch
 
@@ -519,7 +569,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 | Episode | Ads that link to it |
 | --- | --- |
-| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
+| [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Rolls-Royce — “At 60 miles an hour…” (1958); Volkswagen — “Think Small” (1959); Avis — “We Try Harder” (1963); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
