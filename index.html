@@ -754,7 +754,7 @@
       <div class="media-caption"><span id="media-kind">Print advertisement</span><a class="source-link" id="media-source" href="#" target="_blank" rel="noopener">Source ↗</a></div>
       <div class="round-body">
         <h2 class="ad-title" id="ad-title"></h2>
-        <p class="prompt">What year did this ad first run?</p>
+        <p class="prompt" id="prompt">What year did this ad first run?</p>
 
         <div class="mode-toggle" id="mode-toggle">
           <button type="button" data-mode="direct" class="active">Enter Year</button>
@@ -1255,6 +1255,7 @@
       id: 35,
       title: "New York State — “I ❤ NY”",
       year: 1977,
+      prompt: "What year did this campaign launch?",
       mediaType: "image",
       mediaUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/I_Love_New_York.svg",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:I_Love_New_York.svg",
@@ -1455,6 +1456,7 @@
     progressFill: $("progress-fill"),
     mediaFrame: $("media-frame"),
     adTitle: $("ad-title"),
+    prompt: $("prompt"),
     modeToggle: $("mode-toggle"),
     directEntry: $("direct-entry"),
     yearInput: $("year-input"),
@@ -1568,6 +1570,8 @@
     var SUBMIT_LABELS = ["Lock It In", "That's My Guess", "Final Answer", "Ship It"];
     els.btnSubmit.textContent = SUBMIT_LABELS[Math.floor(Math.random() * SUBMIT_LABELS.length)];
     els.adTitle.textContent = ad.title;
+    // Some entries are campaigns rather than a single spot, so they ask differently.
+    els.prompt.textContent = ad.prompt || "What year did this ad first run?";
     els.yearInput.value = "";
     els.btnSubmit.disabled = true;
     renderChoices();
