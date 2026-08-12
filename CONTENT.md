@@ -407,7 +407,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** An early viral phenomenon, proof a catchphrase could carry a brand across talk shows, playgrounds, and the early internet without a single product claim.
 
-**Did you know?** Adapted from Charles Stone III's short film 'True' and starring his real friends, “Whassup?!” won the Cannes Grand Prix and entered everyday speech.
+**Did you know?** “Whassup?!” won the Cannes Grand Prix, was parodied in movies and television, and entered everyday speech.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=JJmqCKtJnxM)
 
@@ -447,7 +447,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Anti-sentimentality as strategy: Spike Jonze made viewers mourn a discarded lamp, then punctured the emotion to sell “new and better.” Won the Cannes Grand Prix.
 
-**Did you know?** A Swedish man appears at the end to scold you: “you're crazy, it has no feelings.”
+**Did you know?** undefined
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=jU-cori12KU)
 
@@ -457,7 +457,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Two minutes, 85 Accord parts, one unbroken chain reaction and no CGI. Craft itself became the selling point, and the internet did the media buy.
 
-**Did you know?** It took 606 takes. Too long for most TV slots, it spread online instead, an early sign that great ads no longer needed airtime.
+**Did you know?** Too long for most TV slots, it spread online instead, an early sign that great ads no longer needed airtime.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=w4XiaP-WhNw)
 
@@ -467,7 +467,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Positioning as sitcom: 66 spots that personified two computers and made the competitor the punchline without citing a single spec.
 
-**Did you know?** Justin Long played Mac, John Hodgman played PC. Adweek later named it the best campaign of the decade.
+**Did you know?** Adweek named it the best campaign of the decade.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=48jlm6QSU4k)
 
@@ -524,7 +524,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Google's first Super Bowl ad, and proof that a product demo could be a love story. The entire romance plays out in nothing but a search box.
 
-**Did you know?** No faces, no voices, no music swell until the end, just queries typed one after another. Google had reportedly resisted TV advertising for years before running it.
+**Did you know?** undefined
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=nnsSUqgkDwU)
 
@@ -559,7 +559,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** The B2B ad that went pop: a steering-precision demo for truck buyers became one of the most-shared ads ever made.
 
-**Did you know?** Jean-Claude Van Damme performed the split for real between two reversing trucks, shot in one take at dawn to Enya's “Only Time.”
+**Did you know?** undefined
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=M7FIvfx5J10)
 
