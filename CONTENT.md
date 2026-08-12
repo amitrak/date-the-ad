@@ -285,7 +285,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** A results table used as a boast. Porsche listed the Le Mans top ten, having taken first through eighth and tenth, and let the single gap supply the headline.
 
-**Did you know?** The one place Porsche missed was ninth, taken by a Sauber-BMW. The winning 956 was driven by Vern Schuppan, Hurley Haywood and Al Holbert.
+**Did you know?** The one place Porsche missed was ninth, taken by a Sauber-BMW.
 
 **Source.** [Original](#rights)
 
@@ -312,7 +312,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Proof a catchphrase could escape the ad break entirely. It jumped into the presidential race when Walter Mondale aimed it at a rival in a debate.
 
-**Did you know?** Clara Peller was an 81-year-old retired manicurist when she was cast. Wendy's sales jumped roughly 30% in the year the ad ran.
+**Did you know?** Wendy's sales jumped roughly 30% in the year the ad ran.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=U80ebi4AKgs)
 
@@ -337,7 +337,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Three words that turned a running-shoe company into a philosophy. The campaign made the brand, not the product, the hero, and modern sports marketing followed.
 
-**Did you know?** The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan, drawing grimly on a convicted murderer's last words.
+**Did you know?** Dan Wieden coined the slogan, drawing grimly on a convicted murderer's last words.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=0yO7xLAGugQ)
 
@@ -367,7 +367,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** The deprivation strategy in one spot: sell the product by imagining its absence. It launched one of America's longest-running campaigns.
 
-**Did you know?** A young Michael Bay directed it for Goodby Silverstein: a peanut-butter-mouthed history buff who can't say “Aaron Burr” loses a $10,000 radio quiz.
+**Did you know?** The insight came from a focus group where planner Jon Steel had people give up milk for a week. They came back describing loss rather than inconvenience. The line went national on the milk-mustache ads in 1995.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=0Gkqzxss8Ss)
 
@@ -422,7 +422,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** “Good things come to those who wait” turned a slow pour into mythology, with white horses in the surf, routinely voted the best British ad ever made.
 
-**Did you know?** AMV BBDO's voiceover channels Moby-Dick's Ahab; real big-wave surfers were blended with CGI horses over Leftfield's “Phat Planet.”
+**Did you know?** The slow two-part pour was a real commercial problem, a reason to order something faster. The campaign's answer was to make the wait the argument for the pint.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=rE1lIdtDs2g)
 
@@ -499,7 +499,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** The ad that cracked the social-media era: made for TV, engineered for YouTube, and willing to answer its audience back in real time.
 
-**Did you know?** Isaiah Mustafa's single-take monologue (horse included) debuted online before the Super Bowl. The follow-up campaign, 186 personalized YouTube replies filmed in two days, helped define social marketing.
+**Did you know?** The follow-up campaign, 186 personalized YouTube replies filmed in two days, helped define social marketing.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=owGykVbfgUE)
 
