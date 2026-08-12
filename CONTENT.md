@@ -19,9 +19,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** The moment advertising discovered fine art. Buying a Royal Academy painting to sell soap scandalized critics — and set the template for a century of aspirational brand imagery.
+**Why it matters.** The moment advertising discovered fine art. Buying a Royal Academy painting to sell soap scandalized critics, and set the template for a century of aspirational brand imagery.
 
-**Did you know?** Millais painted his own grandson; the Illustrated London News then sold the copyright to Pears, who added the bar of soap. He was reportedly furious at first, and came round on seeing the proof.
+**Did you know?** John Everett Millais painted his own grandson; the Illustrated London News then sold the copyright to Pears, who added the bar of soap. He was apprehensive at first, but came around to appreciate the ad.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bubbles_by_John_Everett_Millais.jpg)
 
@@ -29,7 +29,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** One of the first great advertising slogans — a promise of simplicity that sold a technology by hiding it. Every 'it just works' pitch since owes it a debt.
+**Why it matters.** One of the first great advertising slogans, it promises simplicity to sell the tech behind the camera.
 
 **Did you know?** George Eastman wrote the slogan himself to launch the first Kodak camera. It turned photography from a chemist's hobby into a mass-market pastime almost overnight.
 
@@ -39,7 +39,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** The birth of the brand mascot. Bibendum proved a company could be embodied by a character — decades before Tony the Tiger or Ronald McDonald existed.
+**Why it matters.** The birth of the brand mascot. Bibendum proved a company could be embodied by a character, decades before Tony the Tiger or Ronald McDonald existed.
 
 **Did you know?** O'Galop's poster shows the Michelin Man toasting with a glass of nails and shards, because Michelin tires “drink up obstacles.” He's one of the oldest mascots still working.
 
@@ -54,9 +54,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** Among the first celebrity endorsements in American advertising — establishing the playbook of borrowing fame to build a brand that the industry still runs on.
+**Why it matters.** Among the first celebrity endorsements in American advertising, establishing the playbook of borrowing fame to build a brand that the industry still runs on.
 
-**Did you know?** Music-hall star Hilda Clark was Coca-Cola's first celebrity endorser. At the time a glass cost five cents at the soda fountain — a price Coke famously held for over 70 years.
+**Did you know?** Music-hall star Hilda Clark was Coca-Cola's first celebrity endorser. At the time a glass cost five cents at the soda fountain, a price Coke famously held for over 70 years.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cocacola-5cents-1900_edit1.jpg)
 
@@ -69,7 +69,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** The ad that named a whole genre of deception. Patent-medicine hype like Stanley's is why “snake oil salesman” means what it means — and why ad regulation exists.
+**Why it matters.** The ad that named a whole genre of deception. Patent-medicine hype like Stanley's is why “snake oil salesman” means what it means, and why ad regulation exists.
 
 **Did you know?** By 1916 federal chemists had found the liniment contained no snake oil at all. Stanley was fined $20, and truth-in-advertising law followed the era's abuses.
 
@@ -84,7 +84,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** Propaganda as direct-response advertising. The pointing finger and the word “YOU” made the viewer the audience of one — among the most imitated compositions in poster history.
+**Why it matters.** Propaganda as direct-response advertising. The pointing finger and the word “YOU” made the viewer the audience of one, among the most imitated compositions in poster history.
 
 **Did you know?** James Montgomery Flagg used his own face (aged up, with a goatee) as the model for Uncle Sam. Over four million copies were printed during World War I.
 
@@ -99,9 +99,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Image · Vintage scoring*
 
-**Why it matters.** The “reason why” school in three words: every maker toasted its tobacco, but Lucky Strike claimed the process first — a move marketers still copy.
+**Why it matters.** The “reason why” school in three words: every maker toasted its tobacco, but Lucky Strike claimed the process first, a move marketers still copy.
 
-**Did you know?** Mad Men opens with Don Draper dreaming up “It's toasted” in 1960 — a great scene, and four decades late. Lucky Strike had been running the line since the First World War.
+**Did you know?** Mad Men opens with Don Draper dreaming up “It's toasted” in 1960, a great scene and four decades late. Lucky Strike had been running the line since the First World War.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lucky_strike_it%27s_toasted.jpg)
 
@@ -156,7 +156,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Ad Age's #1 campaign of the century. DDB's honest, witty minimalism launched the Creative Revolution and taught advertising to treat readers as intelligent.
 
-**Did you know?** Bill Bernbach's great innovation was pairing copywriters with art directors — a partnership that produced this ad's acres of white space and self-deprecating wit.
+**Did you know?** Bill Bernbach's great innovation was pairing copywriters with art directors, a partnership that produced this ad's acres of white space and self-deprecating wit.
 
 **Source.** [Wikipedia](https://en.wikipedia.org/wiki/File:Think_Small.jpg)
 
@@ -171,7 +171,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Demonstration advertising at its cheekiest: if a chimpanzee can make a copy, anyone can. It sold a machine by selling effortlessness.
 
-**Did you know?** The Xerox 914 became so dominant that “to xerox” entered the language as a verb — a trademark lawyer's nightmare, a marketer's dream.
+**Did you know?** The Xerox 914 became so dominant that “to xerox” entered the language as a verb, a trademark lawyer's nightmare and a marketer's dream.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=hkEykPawTrg)
 
@@ -209,9 +209,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** The high-water mark of advertising idealism — selling a soft drink as world peace. It proved a commercial could jump the fence into pop culture and live there.
+**Why it matters.** The high-water mark of advertising idealism, selling a soft drink as world peace. It proved a commercial could jump the fence into pop culture and live there.
 
-**Did you know?** Shot on a hillside in Italy after the original airfield shoot was rained out, the jingle was re-recorded as “I'd Like to Teach the World to Sing” and became a genuine chart hit — twice.
+**Did you know?** The jingle was re-recorded as “I'd Like to Teach the World to Sing” and became a genuine chart hit, twice.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=1VM2eLhvsSM)
 
@@ -238,7 +238,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Place branding's masterpiece: Milton Glaser's logo, made for a bankrupt, crime-ridden city, became the most imitated tourism mark on earth.
 
-**Did you know?** Glaser sketched the concept on scrap paper in a taxi — the sketch is now in MoMA — and did the work pro bono, expecting it to run a few months.
+**Did you know?** Glaser sketched the concept on scrap paper in a taxi (the sketch is now in MoMA) and did the work pro bono, expecting it to run a few months.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:I_Love_New_York.svg)
 
@@ -251,9 +251,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** The template for emotional sports marketing: a 60-second story with no product claim — just human warmth between a weary hero and a kid with a Coke.
+**Why it matters.** The template for emotional sports marketing: a 60-second story with no product claim, just human warmth between a weary hero and a kid with a Coke.
 
-**Did you know?** The shoot took three days and dozens of Cokes. It first aired on Monday Night Football — the Super Bowl broadcast everyone remembers came months later.
+**Did you know?** It first aired on Monday Night Football, months before the Super Bowl broadcast everyone remembers.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=xffOCZYX6F8)
 
@@ -293,9 +293,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** The Super Bowl ad as cultural event begins here. A product launch staged as dystopian cinema, it positioned the Mac not as a computer but as a creative tool.
+**Why it matters.** The Super Bowl ad as cultural event begins here. It positioned IBM as Big Brother in a thinly veiled metaphor, and the Mac as the creative tool to take them down.
 
-**Did you know?** Directed by Ridley Scott fresh off Blade Runner, the Orwell-inspired spot aired nationally just once — and people still talk about it every February.
+**Did you know?** Directed by Ridley Scott, the Orwell-inspired spot aired nationally just once, and people still talk about it every February.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=VtvjbmoDx-I)
 
@@ -310,7 +310,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** Proof a catchphrase could escape the ad break entirely — it jumped into the presidential race when Walter Mondale aimed it at a rival in a debate.
+**Why it matters.** Proof a catchphrase could escape the ad break entirely. It jumped into the presidential race when Walter Mondale aimed it at a rival in a debate.
 
 **Did you know?** Clara Peller was an 81-year-old retired manicurist when she was cast. Wendy's sales jumped roughly 30% in the year the ad ran.
 
@@ -335,9 +335,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** Three words that turned a running-shoe company into a philosophy. The campaign made the brand — not the product — the hero, and modern sports marketing followed.
+**Why it matters.** Three words that turned a running-shoe company into a philosophy. The campaign made the brand, not the product, the hero, and modern sports marketing followed.
 
-**Did you know?** The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan partly inspired — grimly — by a convicted murderer's last words.
+**Did you know?** The first “Just Do It” spot starred 80-year-old runner Walt Stack jogging across the Golden Gate Bridge. Dan Wieden coined the slogan, drawing grimly on a convicted murderer's last words.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=0yO7xLAGugQ)
 
@@ -380,9 +380,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title shown*
 
-**Why it matters.** Apple's comeback manifesto. Aired weeks after Steve Jobs returned, it rebuilt the brand as a creative tool for rebels — the positioning Apple trades on to this day.
+**Why it matters.** Apple's comeback manifesto. Aired weeks after Steve Jobs returned, it rebuilt the brand as a creative tool for rebels, the positioning Apple trades on to this day.
 
-**Did you know?** Richard Dreyfuss narrated the broadcast version, but a cut voiced by Jobs himself exists — he decided at the last minute it shouldn't be about him.
+**Did you know?** Richard Dreyfuss narrated the broadcast version, but a cut voiced by Jobs himself exists. He decided at the last minute it shouldn't be about him.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=5sMBhDv4sik)
 
@@ -395,9 +395,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** A talking dog became a national catchphrase — and later a cautionary tale about mascots whose fame outruns the sales they're meant to drive.
+**Why it matters.** A talking dog became a national catchphrase, and later a cautionary tale about mascots whose fame outruns the sales they're meant to drive.
 
-**Did you know?** Gidget, the female Chihuahua who played the male dog, got a movie cameo out of it. The campaign ended when sales lagged behind the fame.
+**Did you know?** undefined
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=aKLW0kQ83qg)
 
@@ -405,7 +405,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title shown*
 
-**Why it matters.** An early viral phenomenon — proof a catchphrase could carry a brand across talk shows, playgrounds, and the early internet without a single product claim.
+**Why it matters.** An early viral phenomenon, proof a catchphrase could carry a brand across talk shows, playgrounds, and the early internet without a single product claim.
 
 **Did you know?** Adapted from Charles Stone III's short film 'True' and starring his real friends, “Whassup?!” won the Cannes Grand Prix and entered everyday speech.
 
@@ -420,7 +420,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** “Good things come to those who wait” turned a slow pour into mythology — white horses in the surf, routinely voted the best British ad ever made.
+**Why it matters.** “Good things come to those who wait” turned a slow pour into mythology, with white horses in the surf, routinely voted the best British ad ever made.
 
 **Did you know?** AMV BBDO's voiceover channels Moby-Dick's Ahab; real big-wave surfers were blended with CGI horses over Leftfield's “Phat Planet.”
 
@@ -435,9 +435,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title shown*
 
-**Why it matters.** Nintendo sold a fighting game as absurdist comedy — beloved mascots brawling in a meadow to “Happy Together” — a tone the franchise still uses.
+**Why it matters.** The TV spot that launched Super Smash Bros. on the Nintendo 64, “Happy Together” is one of the most iconic advertisements of the video game industry.
 
-**Did you know?** The costumed Mario, Yoshi, Pikachu, and DK shoot launched an N64 series that became Nintendo's best-selling crossover juggernaut.
+**Did you know?** Mario creator Shigeru Miyamoto had reservations about his family-friendly characters beating each other up. The ad leaned into this shock value with an ironic soundtrack, “Happy Together” by the Turtles.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=K783SDTBKmg)
 
@@ -447,7 +447,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Anti-sentimentality as strategy: Spike Jonze made viewers mourn a discarded lamp, then punctured the emotion to sell “new and better.” Won the Cannes Grand Prix.
 
-**Did you know?** The Swedish man who scolds you — “you're crazy, it has no feelings” — delivered the twist standing in fake Los Angeles rain.
+**Did you know?** A Swedish man appears at the end to scold you: “you're crazy, it has no feelings.”
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=jU-cori12KU)
 
@@ -455,9 +455,9 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title shown*
 
-**Why it matters.** Two minutes, 85 Accord parts, one unbroken chain reaction, no CGI — craft itself became the selling point, and the internet did the media buy.
+**Why it matters.** Two minutes, 85 Accord parts, one unbroken chain reaction and no CGI. Craft itself became the selling point, and the internet did the media buy.
 
-**Did you know?** It took 606 takes. Too long for most TV slots, it spread online instead — an early sign that great ads no longer needed airtime.
+**Did you know?** It took 606 takes. Too long for most TV slots, it spread online instead, an early sign that great ads no longer needed airtime.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=w4XiaP-WhNw)
 
@@ -499,7 +499,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** The ad that cracked the social-media era: made for TV, engineered for YouTube, and willing to answer its audience back in real time.
 
-**Did you know?** Isaiah Mustafa's single-take monologue (horse included) debuted online before the Super Bowl. The follow-up campaign — 186 personalized YouTube replies filmed in two days — helped define social marketing.
+**Did you know?** Isaiah Mustafa's single-take monologue (horse included) debuted online before the Super Bowl. The follow-up campaign, 186 personalized YouTube replies filmed in two days, helped define social marketing.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=owGykVbfgUE)
 
@@ -507,7 +507,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title hidden*
 
-**Why it matters.** The modern global platform: one insight — hunger changes you — translated into more than 80 markets from a single Super Bowl debut.
+**Why it matters.** The modern global platform: one insight, that hunger changes you, translated into more than 80 markets from a single Super Bowl debut.
 
 **Did you know?** The Betty White spot launched the campaign. Fans then petitioned for White to host SNL, which she did months later at age 88.
 
@@ -524,7 +524,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Why it matters.** Google's first Super Bowl ad, and proof that a product demo could be a love story. The entire romance plays out in nothing but a search box.
 
-**Did you know?** No faces, no voices, no music swell until the end — just queries typed one after another. Google had reportedly resisted TV advertising for years before running it.
+**Did you know?** No faces, no voices, no music swell until the end, just queries typed one after another. Google had reportedly resisted TV advertising for years before running it.
 
 **Source.** [YouTube](https://www.youtube.com/watch?v=nnsSUqgkDwU)
 
@@ -547,7 +547,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 *Video · Title shown*
 
-**Why it matters.** Public-safety messaging reinvented as a pop song — morbid, adorable, and the most-awarded campaign in Cannes Lions history.
+**Why it matters.** Public-safety messaging reinvented as a pop song: morbid, adorable, and the most-awarded campaign in Cannes Lions history.
 
 **Did you know?** Made for Melbourne's Metro Trains, the song charted on iTunes in 28 countries and the spin-off game passed 100 million downloads.
 
