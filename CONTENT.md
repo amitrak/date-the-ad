@@ -5,7 +5,7 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**46 ads** in the pool · **33** link to episodes · **10** score on the vintage curve · **22** rotating footer quotes
+**47 ads** in the pool · **34** link to episodes · **11** score on the vintage curve · **22** rotating footer quotes
 
 Span: 1000–2013. Ten are drawn at random per playthrough.
 
@@ -154,6 +154,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 - [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father)
   <br>how Bernays sold cigarettes to women as “torches of freedom”
+
+### 1923 — Camel — “I'd Walk a Mile for a Camel”
+
+*Image · Vintage scoring*
+
+**Why it matters.** A slogan with no argument in it at all. No claim about the tobacco, no reason to switch, just a line worth repeating, and people repeated it for forty years.
+
+**Did you know?** Camel was the dominant American cigarette of the era, and R.J. Reynolds kept the line in service for decades after this ran.
+
+**Source.** [Original](https://www.si.edu/object/archives/components/sova-nmah-ac-0059-ref8636)
+
+**Hear more on A History of Marketing.**
+
+- [Paul Feldwick: Deconstructing the Myths of Advertising](https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths)
+  <br>on the catchphrase as an advertising asset in its own right
 
 ### 1943 — Westinghouse — “We Can Do It!” (Rosie the Riveter)
 
@@ -650,6 +665,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Michelin — “Nunc est Bibendum” (1898) |
 | [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900); De Beers — “A Diamond Is Forever” (1948) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
+| [Paul Feldwick: Deconstructing the Myths of Advertising](https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths) | Camel — “I'd Walk a Mile for a Camel” (1923); Got Milk? — “Aaron Burr” (1993) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”](https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Guy Kawasaki: The Remarkable Rise of Evangelism Marketing](https://marketinghistory.org/p/guy-kawasaki-the-remarkable-rise) | Apple — “Think Different” (Here's to the Crazy Ones) (1997); Apple — “Get a Mac” (I'm a Mac) (2006) |
@@ -658,7 +674,6 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | [Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand](https://marketinghistory.org/p/tracey-panek-levis-corporate-historian) | Levi's — “Laundrette” (1985) |
 | [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian) | Nike — “Just Do It” (first commercial) (1988) |
 | [Paul Feldwick: “The only honest case study in the history of marketing”](https://marketinghistory.org/p/paul-feldwick-barclaycard-case-study) | Barclaycard — Rowan Atkinson (1991) |
-| [Paul Feldwick: Deconstructing the Myths of Advertising](https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths) | Got Milk? — “Aaron Burr” (1993) |
 | [David Gluckman: Why the Inventor of Baileys Thinks Market Research is Bullsh*t](https://marketinghistory.org/p/david-gluckman-inventor-of-baileys) | Guinness — “Surfer” (1999) |
 | [David Aaker: “The Father of Modern Branding” Returns](https://marketinghistory.org/p/david-aaker-the-father-of-branding-returns) | Dove — “Evolution” (2006) |
 | [Nick Asbury: The Case Against “Purpose”](https://marketinghistory.org/p/nick-asbury-the-case-against-purpose) | Dove — “Evolution” (2006) |

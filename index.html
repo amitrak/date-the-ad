@@ -1354,6 +1354,20 @@
       listen: [ep("eckhardt", "on branding in imperial China, where this plate belongs")]
     },
     {
+      id: 48,
+      slug: "camel-1923",
+      title: "Camel — “I'd Walk a Mile for a Camel”",
+      year: 1923,
+      mediaType: "image",
+      // Cropped above the ad's border: the archive sheet carries a pencilled
+      // date that would give the answer away.
+      mediaUrl: "assets/ads/camel-1923.jpg",
+      sourceUrl: "https://www.si.edu/object/archives/components/sova-nmah-ac-0059-ref8636",
+      significance: "A slogan with no argument in it at all. No claim about the tobacco, no reason to switch, just a line worth repeating, and people repeated it for forty years.",
+      fact: "Camel was the dominant American cigarette of the era, and R.J. Reynolds kept the line in service for decades after this ran.",
+      listen: [ep("feldwick", "on the catchphrase as an advertising asset in its own right")]
+    },
+    {
       id: 45,
       title: "Woodbury Soap — “The Skin You Love To Touch”",
       year: 1911,
@@ -1799,6 +1813,7 @@
     if (url.indexOf("youtube") !== -1) return "YouTube";
     if (url.indexOf("commons.wikimedia") !== -1) return "Wikimedia Commons";
     if (url.indexOf("wikipedia.org") !== -1) return "Wikipedia";
+    if (url.indexOf("si.edu") !== -1) return "Smithsonian";
     return "Original";
   }
 
