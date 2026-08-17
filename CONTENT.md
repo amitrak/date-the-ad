@@ -5,7 +5,7 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**47 ads** in the pool · **34** link to episodes · **11** score on the vintage curve · **22** rotating footer quotes
+**46 ads** in the pool · **34** link to episodes · **11** score on the vintage curve · **22** rotating footer quotes
 
 Span: 1000–2013. Ten are drawn at random per playthrough.
 
@@ -169,16 +169,6 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 - [Paul Feldwick: Deconstructing the Myths of Advertising](https://marketinghistory.org/p/paul-feldwick-deconstructing-advertising-myths)
   <br>on the catchphrase as an advertising asset in its own right
-
-### 1943 — Westinghouse — “We Can Do It!” (Rosie the Riveter)
-
-*Image*
-
-**Why it matters.** Wartime internal propaganda turned feminist icon: made to boost factory morale, rediscovered decades later as shorthand for women's economic power.
-
-**Did you know?** J. Howard Miller's poster hung in Westinghouse plants for just two weeks. It only became “Rosie the Riveter” when the 1980s rediscovered it.
-
-**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:We_Can_Do_It!.jpg)
 
 ### 1948 — De Beers — “A Diamond Is Forever”
 
