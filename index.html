@@ -838,6 +838,8 @@
       historical commentary and criticism, which we believe is fair use; each is credited
       to its brand and agency. All rights remain with their owners.
       To request removal, email <a href="mailto:hello@marketinghistory.org?subject=Date%20the%20Ad%20%E2%80%94%20image%20removal%20request">hello@marketinghistory.org</a> and it will be taken down promptly.
+      No cookies are set and nothing is tracked. A game in progress is kept in your own browser
+      so a reload doesn't lose it, and never leaves this device.
     </div>
   </footer>
 </div>
@@ -1578,6 +1580,65 @@
   // consecutive playthroughs work through the whole catalogue before repeating.
   var deck = [];
 
+  // A game in progress survives a reload. Purely functional first-party
+  // storage: ad ids, guesses and the score, nothing identifying.
+  var SAVE_KEY = "dateTheAd.progress.v1";
+
+  function saveProgress() {
+    try {
+      if (!state.order.length) return;
+      localStorage.setItem(SAVE_KEY, JSON.stringify({
+        order: state.order.map(function (a) { return a.id; }),
+        score: state.score,
+        results: state.results.map(function (r) {
+          return { id: r.ad.id, guess: r.guess, points: r.points };
+        }),
+        deck: deck.map(function (a) { return a.id; })
+      }));
+    } catch (e) { /* private browsing, quota, etc. Losing the save is fine. */ }
+  }
+
+  function clearProgress() {
+    try { localStorage.removeItem(SAVE_KEY); } catch (e) {}
+  }
+
+  // Returns "game" or "results" if something was restored, else null. The round
+  // is derived from how many answers were recorded, so a reload while the
+  // feedback is on screen resumes at the next question rather than re-asking
+  // one the player has already seen the answer to.
+  function loadProgress() {
+    try {
+      var raw = localStorage.getItem(SAVE_KEY);
+      if (!raw) return null;
+      var saved = JSON.parse(raw);
+      var byId = {};
+      ADS.forEach(function (a) { byId[a.id] = a; });
+
+      var order = (saved.order || []).map(function (id) { return byId[id]; });
+      if (order.length !== TOTAL_ROUNDS || order.indexOf(undefined) !== -1) {
+        clearProgress();
+        return null;   // the ad list changed under an old save
+      }
+      var results = (saved.results || [])
+        .map(function (r) {
+          return byId[r.id] ? { ad: byId[r.id], guess: r.guess, points: r.points } : null;
+        })
+        .filter(Boolean);
+      if (results.length > TOTAL_ROUNDS) { clearProgress(); return null; }
+
+      state.order = order;
+      state.results = results;
+      state.round = results.length;
+      state.score = results.reduce(function (n, r) { return n + r.points; }, 0);
+      state.answered = false;
+      deck = (saved.deck || []).map(function (id) { return byId[id]; }).filter(Boolean);
+      return state.round >= TOTAL_ROUNDS ? "results" : "game";
+    } catch (e) {
+      clearProgress();
+      return null;
+    }
+  }
+
   // Entries marked draft are staged but kept out of play, usually because their
   // image hasn't been sourced yet.
   function liveAds() {
@@ -1795,6 +1856,7 @@
     var diff = yearsOff(ad, guess);
     state.score += points;
     state.results.push({ ad: ad, guess: guess, points: points });
+    saveProgress();   // banked the moment it's answered, so a reload keeps it
 
     // Freeze choice buttons and color them. Marking by score rather than by
     // exact year keeps campaign spans correct.
@@ -2011,9 +2073,23 @@
     state.results = [];
     state.answered = false;
     els.yearInput.disabled = false;
+    saveProgress();
     renderQuote();
     showScreen("game");
     startRound();
+  }
+
+  // Pick up an interrupted game, or start at the intro.
+  function boot() {
+    var resumed = loadProgress();
+    renderQuote();
+    if (resumed === "game") {
+      els.yearInput.disabled = false;
+      showScreen("game");
+      startRound();
+    } else if (resumed === "results") {
+      endGame();
+    }
   }
 
   // ---------------------------------------------------------------
@@ -2096,7 +2172,7 @@
     else startRound();
   });
 
-  renderQuote();
+  boot();
 })();
 </script>
 </body>
