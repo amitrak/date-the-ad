@@ -110,11 +110,11 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 - [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
   <br>on the patent-medicine era that gave advertising its bad name
 
-### 1911–1916 — Woodbury Soap — “The Skin You Love To Touch”
+### 1911–1916 — Woodbury Soap — “A Skin You Love To Touch”
 
 *Image · Campaign span*
 
-**Why it matters.** The first ad to sell a product with sexual suggestion. Helen Lansdowne's line promised not cleanliness but being touched, and Albert Lasker called it one of the three great landmarks in advertising history.
+**Why it matters.** Credited as the first campaign to sell a product with sexual suggestion. Helen Lansdowne's line promised not cleanliness but being touched, and Albert Lasker called it one of the three great landmarks in advertising history.
 
 **Did you know?** The slogan worked so well that Woodbury ran it into the 1940s. Advertising Age later placed the campaign 31st among the top 100 of the twentieth century.
 
@@ -661,7 +661,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | --- | --- |
 | [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); Avis — “We Try Harder” (1963); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
-| [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Woodbury Soap — “The Skin You Love To Touch” (1911); Marlboro — The Marlboro Man (1955); Clairol — “Does She… or Doesn't She?” (1957) |
+| [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Woodbury Soap — “A Skin You Love To Touch” (1911); Marlboro — The Marlboro Man (1955); Clairol — “Does She… or Doesn't She?” (1957) |
 | [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Michelin — “Nunc est Bibendum” (1898) |
 | [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900); De Beers — “A Diamond Is Forever” (1948) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
@@ -743,7 +743,7 @@ A few ads ran as campaigns rather than debuting once, so any year inside the spa
 the full 10, with a steeper drop-off outside it: 1 year out = 8, 2–3 = 6, 4–5 = 2, beyond = 0.
 
 - **Liu Family Needle Shop — the “White Rabbit” printing plate** — 800–1200
-- **Woodbury Soap — “The Skin You Love To Touch”** — 1911–1916
+- **Woodbury Soap — “A Skin You Love To Touch”** — 1911–1916
 - **Divan Japonais — Toulouse-Lautrec** — 1892–1894
 - **Barclaycard — Rowan Atkinson** — 1991–1997
 
