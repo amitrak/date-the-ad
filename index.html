@@ -714,7 +714,11 @@
   .foot-credit a:hover { color: var(--ink); border-color: var(--ink); }
   .foot-rights {
     max-width: 560px;
-    margin: 18px auto 0;
+    /* Set apart as fine print: generous space and a rule narrower than the
+       footer's own, so it reads as a subordinate block rather than a sibling. */
+    margin: 46px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
     /* ~10.4px, so WCAG treats this as normal text and AA needs 4.5:1.
        #767676 is 4.54:1 on white, the lightest grey that still passes. */
     font-size: .65rem;
