@@ -128,6 +128,33 @@
   }
   .stat.score .value { color: var(--accent); }
 
+  /* Abandoning a game is the one destructive control here, so it asks once
+     before acting rather than firing on a stray tap next to the score. */
+  .restart {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: center;
+    margin-right: 14px;
+    font-family: var(--font-ui);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: color .15s ease, border-color .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .restart svg { display: block; flex: none; }
+  .restart:hover { color: var(--ink); border-color: #bbb; }
+  .restart.confirm { color: var(--ink); border-color: var(--ink); }
+
   .progress-track {
     max-width: 780px;
     margin: 10px auto 0;
@@ -731,9 +758,16 @@
   .foot-rights a { color: #555555; text-decoration: underline; }
   .foot-rights a:hover { color: var(--ink); }
 
+  @media (max-width: 560px) {
+    /* Narrow screens can't fit the wordmark, a labelled button and both stats,
+       so the button falls back to the icon alone. aria-label carries the name. */
+    .restart-label { display: none; }
+    .restart { padding: 7px; margin-right: 10px; }
+    .stat { padding: 2px 10px; }
+  }
+
   @media (max-width: 480px) {
     .round-body { padding: 16px 16px 22px; }
-    .pill { padding: 4px 10px; font-size: .76rem; }
     .choices { grid-template-columns: 1fr 1fr; }
     .direct-entry { flex-direction: column; }
     .direct-entry .btn { width: 100%; }
@@ -747,6 +781,11 @@
     <div class="header-inner">
       <div class="brand">DATE THE AD<span class="tagline">A Marketing History Game</span></div>
       <div class="hud">
+        <button type="button" class="restart" id="btn-restart" aria-label="Start over">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/>
+          </svg><span class="restart-label" id="restart-label">Start over</span>
+        </button>
         <div class="stat"><span class="label">Round</span><span class="value" id="round-display">1/10</span></div>
         <div class="stat score"><span class="label">Points</span><span class="value" id="score-display">0</span></div>
       </div>
@@ -2119,6 +2158,35 @@
   // ---------------------------------------------------------------
   $("btn-start").addEventListener("click", resetGame);
   $("btn-again").addEventListener("click", resetGame);
+
+  // Abandon the current game. Asks once, since a stray tap sits right next to
+  // the score and there is no undo.
+  var restartTimer = null;
+  function armRestart(on) {
+    var b = $("btn-restart");
+    clearTimeout(restartTimer);
+    b.classList.toggle("confirm", on);
+    // Only the label changes; replacing the button's text would drop the icon.
+    $("restart-label").textContent = on ? "Sure?" : "Start over";
+    b.setAttribute("aria-label", on ? "Confirm start over" : "Start over");
+    if (on) restartTimer = setTimeout(function () { armRestart(false); }, 4000);
+  }
+  $("btn-restart").addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (!this.classList.contains("confirm")) { armRestart(true); return; }
+    armRestart(false);
+    clearProgress();
+    state.order = [];
+    state.results = [];
+    state.round = 0;
+    state.score = 0;
+    state.answered = false;
+    showScreen("intro");
+  });
+  // Tapping anywhere else backs out of the confirm.
+  document.addEventListener("click", function () {
+    if ($("btn-restart").classList.contains("confirm")) armRestart(false);
+  });
 
   $("btn-share").addEventListener("click", function () {
     var text = shareText();
