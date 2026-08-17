@@ -118,7 +118,7 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Did you know?** The slogan worked so well that Woodbury ran it into the 1940s. Advertising Age later placed the campaign 31st among the top 100 of the twentieth century.
 
-**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1916-skin-touch-soap-ad.jpg)
+**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Soap_advertisement_with_painting_by_Alonzo_Myron_Kimball,_1916.jpg)
 
 **Hear more on A History of Marketing.**
 
