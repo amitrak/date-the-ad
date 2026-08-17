@@ -29,8 +29,6 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 - [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china)
   <br>on branding in imperial China, where this plate belongs
-- [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings)
-  <br>on where marketing, fine art and art history meet
 
 ### 1886 — Pears' Soap — “Bubbles”
 
@@ -650,12 +648,12 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
 | [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Woodbury Soap — “The Skin You Love To Touch” (1911); Marlboro — The Marlboro Man (1955); Clairol — “Does She… or Doesn't She?” (1957) |
 | [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Michelin — “Nunc est Bibendum” (1898) |
-| [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Divan Japonais — Toulouse-Lautrec (1893) |
 | [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900); De Beers — “A Diamond Is Forever” (1948) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”](https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Guy Kawasaki: The Remarkable Rise of Evangelism Marketing](https://marketinghistory.org/p/guy-kawasaki-the-remarkable-rise) | Apple — “Think Different” (Here's to the Crazy Ones) (1997); Apple — “Get a Mac” (I'm a Mac) (2006) |
+| [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings) | Divan Japonais — Toulouse-Lautrec (1893) |
 | [Rory Sutherland: Capital ‘M’ vs. small ‘m’ Marketing & the Big Mistake the Industry Made](https://marketinghistory.org/p/rory-sutherland-marketings-big-mistake) | Rolls-Royce — “At 60 miles an hour…” (1958) |
 | [Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand](https://marketinghistory.org/p/tracey-panek-levis-corporate-historian) | Levi's — “Laundrette” (1985) |
 | [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian) | Nike — “Just Do It” (first commercial) (1988) |

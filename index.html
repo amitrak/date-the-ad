@@ -1351,10 +1351,7 @@
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Bronze_printing_plate_for_an_advertisement.jpg",
       significance: "The oldest identified printed advertising medium in the world. A bronze plate cut to print handbills for a needle shop in Jinan, it shows a brand mark, a product claim and a reason to buy, roughly eight centuries before anyone called that advertising.",
       fact: "The white rabbit at the centre is the shop's trademark. The surrounding text reads: “We buy high quality steel rods and make fine quality needles to be ready for use at no time.”",
-      listen: [
-        ep("eckhardt", "on branding in imperial China, where this plate belongs"),
-        ep("wijnaerde", "on where marketing, fine art and art history meet")
-      ]
+      listen: [ep("eckhardt", "on branding in imperial China, where this plate belongs")]
     },
     {
       id: 45,
@@ -1479,13 +1476,10 @@
       return 0;
     }
 
-    // Campaigns that ran for years: a wide bullseye, then a steep drop-off.
-    if (curve === "campaign") {
-      if (diff === 1) return 8;
-      if (diff <= 3)  return 6;
-      if (diff <= 5)  return 2;
-      return 0;
-    }
+    // Campaigns that ran for years get a wide bullseye, then the ordinary
+    // modern falloff. An earlier steeper curve dropped from 6 to 2 between
+    // three and four years out, which read as a bug rather than a near miss.
+    if (curve === "campaign") curve = "modern";
 
     if (curve === "vintage") {
       if (diff === 0)  return 10;
