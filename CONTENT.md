@@ -5,15 +5,32 @@ Every ad, note, episode link, and quote in the game.
 **Generated file — do not edit by hand.** Edit the data in `index.html`, then run
 `node build-content-doc.js` to regenerate this.
 
-**41 ads** in the pool · **28** link to episodes · **7** score on the vintage curve · **22** rotating footer quotes
+**46 ads** in the pool · **33** link to episodes · **10** score on the vintage curve · **22** rotating footer quotes
 
-Span: 1886–2013. Ten are drawn at random per playthrough.
+Span: 1000–2013. Ten are drawn at random per playthrough.
 
 ---
 
 ## The ads
 
 Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
+
+### 800–1200 — Liu Family Needle Shop — the “White Rabbit” printing plate
+
+*Image · Campaign span*
+
+**Why it matters.** The oldest identified printed advertising medium in the world. A bronze plate cut to print handbills for a needle shop in Jinan, it shows a brand mark, a product claim and a reason to buy, roughly eight centuries before anyone called that advertising.
+
+**Did you know?** The white rabbit at the centre is the shop's trademark. The surrounding text reads: “We buy high quality steel rods and make fine quality needles to be ready for use at no time.”
+
+**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bronze_printing_plate_for_an_advertisement.jpg)
+
+**Hear more on A History of Marketing.**
+
+- [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china)
+  <br>on branding in imperial China, where this plate belongs
+- [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings)
+  <br>on where marketing, fine art and art history meet
 
 ### 1886 — Pears' Soap — “Bubbles”
 
@@ -34,6 +51,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 **Did you know?** George Eastman wrote the slogan himself to launch the first Kodak camera. It turned photography from a chemist's hobby into a mass-market pastime almost overnight.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:You_press_the_button,_we_do_the_rest_(Kodak).jpg)
+
+### 1892–1894 — Divan Japonais — Toulouse-Lautrec
+
+*Image · Campaign span*
+
+**Why it matters.** Advertising commissioned as art, and taken seriously as art. Toulouse-Lautrec's poster for a Montmartre café-concert treated a commercial brief with the full force of his style, and collectors were peeling them off walls almost immediately.
+
+**Did you know?** The seated woman is the dancer Jane Avril and the man beside her the critic Édouard Dujardin. The singer on stage is Yvette Guilbert, identifiable by her black gloves even though her head is cropped out of the frame.
+
+**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Henri_de_Toulouse-Lautrec_-_Divan_Japonais_-_Google_Art_Project.jpg)
+
+**Hear more on A History of Marketing.**
+
+- [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings)
+  <br>on the connection between marketing, fine art and art history
 
 ### 1898 — Michelin — “Nunc est Bibendum”
 
@@ -80,6 +112,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 - [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history)
   <br>on the patent-medicine era that gave advertising its bad name
 
+### 1911–1916 — Woodbury Soap — “The Skin You Love To Touch”
+
+*Image · Campaign span*
+
+**Why it matters.** The first ad to sell a product with sexual suggestion. Helen Lansdowne's line promised not cleanliness but being touched, and Albert Lasker called it one of the three great landmarks in advertising history.
+
+**Did you know?** The slogan worked so well that Woodbury ran it into the 1940s. Advertising Age later placed the campaign 31st among the top 100 of the twentieth century.
+
+**Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1916-skin-touch-soap-ad.jpg)
+
+**Hear more on A History of Marketing.**
+
+- [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly)
+  <br>on how advertising has used sex and the female image ever since
+
 ### 1917 — U.S. Army — “I Want YOU” (Uncle Sam)
 
 *Image · Vintage scoring*
@@ -120,6 +167,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 **Source.** [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:We_Can_Do_It!.jpg)
 
+### 1948 — De Beers — “A Diamond Is Forever”
+
+*Image*
+
+**Why it matters.** The campaign that invented the modern engagement ring. Diamond sales had collapsed in the Depression, so N.W. Ayer set out to make the stone inseparable from betrothal, and the idea outlived everyone who worked on it.
+
+**Did you know?** Copywriter Frances Gerety wrote the line in 1947, reportedly late at night and unconvinced by it. It has run on every De Beers ad since, and Advertising Age named it the slogan of the century.
+
+**Source.** [Original](#rights)
+
+**Hear more on A History of Marketing.**
+
+- [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america)
+  <br>on how mass marketing built categories out of nothing
+
 ### 1955 — Marlboro — The Marlboro Man
 
 *Video · Title shown*
@@ -134,6 +196,21 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 
 - [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly)
   <br>the critic who spent a career taking aim at how tobacco advertised
+
+### 1957 — Clairol — “Does She… or Doesn't She?”
+
+*Image*
+
+**Why it matters.** Shirley Polykoff took a product women hid and made discretion the selling point. Home hair colour went from something disreputable to something ordinary, and Clairol's category grew many times over.
+
+**Did you know?** The answer to the question was “only her hairdresser knows for sure.” When Clairol first asked it in 1957, the ratio of women who did to women who didn't was about 15 to 1.
+
+**Source.** [Original](#rights)
+
+**Hear more on A History of Marketing.**
+
+- [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly)
+  <br>on advertising, beauty standards and the female image
 
 ### 1958 — Rolls-Royce — “At 60 miles an hour…”
 
@@ -571,13 +648,14 @@ Listed chronologically. Vintage ads (pre-1926) score on the wider curve.
 | --- | --- |
 | [Mark Tungate: Advertising History from Ancient Pompeii to Today](https://marketinghistory.org/p/mark-tungate-advertising-history) | Clark Stanley — Snake Oil Liniment (1905); Volkswagen — “Think Small” (1959); Avis — “We Try Harder” (1963); Levy's Rye Bread — “You Don't Have to Be Jewish” (1965); New York State — “I ❤ NY” (1977); British Airways — “Manhattan” (1983); Apple — “Big Brother” Macintosh launch (1984) |
 | [Tim Calkins: Why Super Bowl Ads Are Still Worth It](https://marketinghistory.org/p/tim-calkins-super-bowl-ads) | Apple — “Big Brother” Macintosh launch (1984); Budweiser — “Whassup?!” (1999); Snickers — “You're Not You When You're Hungry” (2010); Google — “Parisian Love” (2010) |
+| [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Woodbury Soap — “The Skin You Love To Touch” (1911); Marlboro — The Marlboro Man (1955); Clairol — “Does She… or Doesn't She?” (1957) |
+| [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Michelin — “Nunc est Bibendum” (1898) |
+| [Peter Van Wijnaerde: Branding, Beauty, & Beheadings](https://marketinghistory.org/p/peter-van-wijnaerde-branding-beauty-beheadings) | Liu Family Needle Shop — the “White Rabbit” printing plate (1000); Divan Japonais — Toulouse-Lautrec (1893) |
+| [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900); De Beers — “A Diamond Is Forever” (1948) |
 | [Larry Tye on Edward Bernays: “The Father of Public Relations”](https://marketinghistory.org/p/larry-tye-on-edward-bernays-the-father) | U.S. Army — “I Want YOU” (Uncle Sam) (1917); Lucky Strike — “It's Toasted” (1917) |
 | [Sergio Zyman, Part 1: “The First Chief Marketing Officer”](https://marketinghistory.org/p/sergio-zyman-the-first-chief-marketing-officer) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Sergio Zyman, Part 2: New Coke and “The End of Marketing as We Know It”](https://marketinghistory.org/p/sergio-zyman-part-2-new-coke-end-of-marketing) | Coca-Cola — “Hilltop” (I'd Like to Buy the World a Coke) (1971); Coca-Cola — “Hey Kid, Catch!” (Mean Joe Greene) (1979) |
 | [Guy Kawasaki: The Remarkable Rise of Evangelism Marketing](https://marketinghistory.org/p/guy-kawasaki-the-remarkable-rise) | Apple — “Think Different” (Here's to the Crazy Ones) (1997); Apple — “Get a Mac” (I'm a Mac) (2006) |
-| [Giana Eckhardt: The Origins of Branding in Imperial China](https://marketinghistory.org/p/giana-eckhardt-origins-of-branding-china) | Michelin — “Nunc est Bibendum” (1898) |
-| [Richard S. Tedlow: The Story of Mass Marketing in America](https://marketinghistory.org/p/richard-s-tedlow-mass-marketing-in-america) | Coca-Cola — “Delicious and Refreshing” (1900) |
-| [Jean Kilbourne: “Killing Us Softly” & Pioneering Feminist Advertising Criticism](https://marketinghistory.org/p/jean-kilbourne-killing-us-softly) | Marlboro — The Marlboro Man (1955) |
 | [Rory Sutherland: Capital ‘M’ vs. small ‘m’ Marketing & the Big Mistake the Industry Made](https://marketinghistory.org/p/rory-sutherland-marketings-big-mistake) | Rolls-Royce — “At 60 miles an hour…” (1958) |
 | [Tracey Panek: Levi's Corporate Historian on Building a Timeless Brand](https://marketinghistory.org/p/tracey-panek-levis-corporate-historian) | Levi's — “Laundrette” (1985) |
 | [Scott Reames: Nike's First-ever Historian Shares Secrets Behind the Swoosh](https://marketinghistory.org/p/scott-reames-nike-historian) | Nike — “Just Do It” (first commercial) (1988) |
@@ -651,6 +729,9 @@ The vintage cutoff is computed as `currentYear - 100`, so it moves with time.
 A few ads ran as campaigns rather than debuting once, so any year inside the span scores
 the full 10, with a steeper drop-off outside it: 1 year out = 8, 2–3 = 6, 4–5 = 2, beyond = 0.
 
+- **Liu Family Needle Shop — the “White Rabbit” printing plate** — 800–1200
+- **Woodbury Soap — “The Skin You Love To Touch”** — 1911–1916
+- **Divan Japonais — Toulouse-Lautrec** — 1892–1894
 - **Barclaycard — Rowan Atkinson** — 1991–1997
 
 ---
